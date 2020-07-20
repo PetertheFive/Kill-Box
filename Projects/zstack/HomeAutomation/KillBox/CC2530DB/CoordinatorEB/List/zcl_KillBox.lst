@@ -1,0 +1,2922 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               20/Jul/2020  22:04:08
+# Copyright 2004-2018 IAR Systems AB.
+# Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\Source\zcl_KillBox.c
+#    Command line       =  
+#        -f C:\Users\Peter.Wu\AppData\Local\Temp\EW3F00.tmp ("C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\Source\zcl_KillBox.c"
+#        -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D xNV_RESTORE -D
+#        xHOLD_AUTO_START -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC -D MT_SYS_FUNC
+#        -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D
+#        ZCL_READ -D ZCL_WRITE -D ZCL_REPORT -D ZCL_EZMODE -D ZCL_BASIC -D
+#        ZCL_IDENTIFY -D ZCL_ON_OFF -D ZCL_SCENES -D ZCL_GROUPS -D
+#        xZCL_LEVEL_CTRL -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS -lC
+#        "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\CoordinatorEB\List"
+#        -lA "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\CoordinatorEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\CoordinatorEB\Obj"
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xD882
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x05, 0x69, 0x67, 0x42,
+#        0x65, 0x65, 0x41, 0x6C, 0x6C, 0x69, 0x61, 0x6E, 0x63, 0x65, 0x30,
+#        0x39}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+#        -f "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\" -I
+#        "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\Source\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\Source\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\CoordinatorEB\List\zcl_KillBox.lst
+#    Object file        =  
+#        C:\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\CC2530DB\CoordinatorEB\Obj\zcl_KillBox.r51
+#
+###############################################################################
+
+C:\Z-Stack Home 1.2.2a.44539\Projects\zstack\HomeAutomation\KillBox\Source\zcl_KillBox.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_sampleLight.c
+      3            Revised:        $Date: 2014-10-24 16:04:46 -0700 (Fri, 24 Oct 2014) $
+      4            Revision:       $Revision: 40796 $
+      5          
+      6          
+      7            Description:    Zigbee Cluster Library - sample device application.
+      8          
+      9          
+     10            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42            This application implements a ZigBee HA 1.2 Light. It can be configured as an
+     43            On/Off light, or as a dimmable light. The following flags must be defined in
+     44            the compiler's pre-defined symbols.
+     45          
+     46            ZCL_ON_OFF
+     47            ZCL_LEVEL_CTRL    (only if dimming functionality desired)
+     48            HOLD_AUTO_START
+     49            ZCL_EZMODE
+     50          
+     51            This device supports all mandatory and optional commands/attributes for the
+     52            OnOff (0x0006) and LevelControl (0x0008) clusters.
+     53          
+     54            SCREEN MODES
+     55            ----------------------------------------
+     56            Main:
+     57              - SW1: Toggle local light
+     58              - SW2: Invoke EZMode
+     59              - SW4: Enable/Disable local permit join
+     60              - SW5: Go to Help screen
+     61            ----------------------------------------
+     62          *********************************************************************/
+     63          
+     64          /*********************************************************************
+     65           * INCLUDES
+     66           */
+     67          #include "ZComDef.h"
+     68          #include "OSAL.h"
+     69          #include "AF.h"
+     70          #include "ZDApp.h"
+     71          #include "ZDObject.h"
+     72          #include "MT_SYS.h"
+     73          
+     74          #include "nwk_util.h"
+     75          
+     76          #include "zcl.h"
+     77          #include "zcl_general.h"
+     78          #include "zcl_ha.h"
+     79          #include "zcl_ezmode.h"
+     80          #include "zcl_diagnostic.h"
+     81          
+     82          #include "zcl_KillBox.h"
+     83          
+     84          #include "onboard.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     85          
+     86          /* HAL */
+     87          #include "hal_lcd.h"
+     88          #include "hal_led.h"
+     89          #include "hal_key.h"
+     90          
+     91          #if ( defined (ZGP_DEVICE_TARGET) || defined (ZGP_DEVICE_TARGETPLUS) \
+     92                || defined (ZGP_DEVICE_COMBO) || defined (ZGP_DEVICE_COMBO_MIN) )
+     93          #include "zgp_translationtable.h"
+     94            #if (SUPPORTED_S_FEATURE(SUPP_ZGP_FEATURE_TRANSLATION_TABLE))
+     95              #define ZGP_AUTO_TT
+     96            #endif
+     97          #endif
+     98          
+     99          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+    100          #include "math.h"
+    101          #include "hal_timer.h"
+    102          #endif
+    103          
+    104          #include "NLMEDE.h"
+    105          
+    106          /*********************************************************************
+    107           * MACROS
+    108           */
+    109          
+    110          /*********************************************************************
+    111           * CONSTANTS
+    112           */
+    113          #if (defined HAL_BOARD_ZLIGHT)
+    114          #define LEVEL_MAX                 0xFE
+    115          #define LEVEL_MIN                 0x0
+    116          #define GAMMA_VALUE               2
+    117          #define PWM_FULL_DUTY_CYCLE       1000
+    118          #elif (defined HAL_PWM)
+    119          #define LEVEL_MAX                 0xFE
+    120          #define LEVEL_MIN                 0x0
+    121          #define GAMMA_VALUE               2
+    122          #define PWM_FULL_DUTY_CYCLE       100
+    123          #endif
+    124          
+    125          /*********************************************************************
+    126           * TYPEDEFS
+    127           */
+    128          
+    129          /*********************************************************************
+    130           * GLOBAL VARIABLES
+    131           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    132          byte zclSampleLight_TaskID;
+   \                     zclSampleLight_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    133          uint8 zclSampleLightSeqNum;
+   \                     zclSampleLightSeqNum:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    134          
+    135          
+    136          /*********************************************************************
+    137           * GLOBAL FUNCTIONS
+    138           */
+    139          
+    140          /*********************************************************************
+    141           * LOCAL VARIABLES
+    142           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    143          afAddrType_t zclSampleLight_DstAddr;
+   \                     zclSampleLight_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    144          
+    145          
+    146          
+    147          #ifdef ZCL_EZMODE
+    148          static void zclSampleLight_ProcessZDOMsgs( zdoIncomingMsg_t *pMsg );
+    149          static void zclSampleLight_EZModeCB( zlcEZMode_State_t state, zclEZMode_CBData_t *pData );
+    150          
+    151          
+    152          // register EZ-Mode with task information (timeout events, callback, etc...)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    153          static const zclEZMode_RegisterData_t zclSampleLight_RegisterEZModeData =
+   \                     zclSampleLight_RegisterEZModeData:
+   \   000000   ....         DW zclSampleLight_TaskID
+   \   000002   0800         DW 8
+   \   000004   0400         DW 4
+   \   000006   ....         DW zclSampleLightSeqNum
+   \   000008   ....         DW `??zclSampleLight_EZModeCB::?relay`
+    154          {
+    155            &zclSampleLight_TaskID,
+    156            SAMPLELIGHT_EZMODE_NEXTSTATE_EVT,
+    157            SAMPLELIGHT_EZMODE_TIMEOUT_EVT,
+    158            &zclSampleLightSeqNum,
+    159            zclSampleLight_EZModeCB
+    160          };
+    161          
+    162          #else
+    163          uint16 bindingInClusters[] =
+    164          {
+    165            ZCL_CLUSTER_ID_GEN_ON_OFF
+    166          #ifdef ZCL_LEVEL_CTRL
+    167            , ZCL_CLUSTER_ID_GEN_LEVEL_CONTROL
+    168          #endif
+    169          };
+    170          #define ZCLSAMPLELIGHT_BINDINGLIST (sizeof(bindingInClusters) / sizeof(bindingInClusters[0]))
+    171          
+    172          #endif  // ZCL_EZMODE
+    173          
+    174          // Test Endpoint to allow SYS_APP_MSGs
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    175          static endPointDesc_t sampleLight_TestEp =
+   \                     sampleLight_TestEp:
+   \   000000                DS 6
+   \   000006                REQUIRE `?<Initializer for sampleLight_TestEp>`
+   \   000006                REQUIRE __INIT_XDATA_I
+    176          {
+    177            SAMPLELIGHT_ENDPOINT,
+    178            &zclSampleLight_TaskID,
+    179            (SimpleDescriptionFormat_t *)NULL,  // No Simple description for this test endpoint
+    180            (afNetworkLatencyReq_t)0            // No Network Latency req
+    181          };
+    182          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    183          uint8 giLightScreenMode = LIGHT_MAINMODE;   // display the main screen mode first
+   \                     giLightScreenMode:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    184          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    185          uint8 gPermitDuration = 0;    // permit joining default to disabled
+   \                     gPermitDuration:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    186          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    187          devStates_t zclSampleLight_NwkState = DEV_INIT;
+   \                     zclSampleLight_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclSampleLight_NwkState>`
+   \   000001                REQUIRE __INIT_XDATA_I
+    188          
+    189          #if ZCL_LEVEL_CTRL
+    190          uint8 zclSampleLight_WithOnOff;       // set to TRUE if state machine should set light on/off
+    191          uint8 zclSampleLight_NewLevel;        // new level when done moving
+    192          bool  zclSampleLight_NewLevelUp;      // is direction to new level up or down?
+    193          int32 zclSampleLight_CurrentLevel32;  // current level, fixed point (e.g. 192.456)
+    194          int32 zclSampleLight_Rate32;          // rate in units, fixed point (e.g. 16.123)
+    195          uint8 zclSampleLight_LevelLastLevel;  // to save the Current Level before the light was turned OFF
+    196          #endif
+    197          
+    198          /*********************************************************************
+    199           * LOCAL FUNCTIONS
+    200           */
+    201          static void zclSampleLight_HandleKeys( byte shift, byte keys );
+    202          static void zclSampleLight_BasicResetCB( void );
+    203          static void zclSampleLight_IdentifyCB( zclIdentify_t *pCmd );
+    204          static void zclSampleLight_IdentifyQueryRspCB( zclIdentifyQueryRsp_t *pRsp );
+    205          static void zclSampleLight_OnOffCB( uint8 cmd );
+    206          static void zclSampleLight_ProcessIdentifyTimeChange( void );
+    207          #ifdef ZCL_LEVEL_CTRL
+    208          static void zclSampleLight_LevelControlMoveToLevelCB( zclLCMoveToLevel_t *pCmd );
+    209          static void zclSampleLight_LevelControlMoveCB( zclLCMove_t *pCmd );
+    210          static void zclSampleLight_LevelControlStepCB( zclLCStep_t *pCmd );
+    211          static void zclSampleLight_LevelControlStopCB( void );
+    212          static void zclSampleLight_DefaultMove( void );
+    213          static uint32 zclSampleLight_TimeRateHelper( uint8 newLevel );
+    214          static uint16 zclSampleLight_GetTime ( uint8 level, uint16 time );
+    215          static void zclSampleLight_MoveBasedOnRate( uint8 newLevel, uint32 rate );
+    216          static void zclSampleLight_MoveBasedOnTime( uint8 newLevel, uint16 time );
+    217          static void zclSampleLight_AdjustLightLevel( void );
+    218          #endif
+    219          
+    220          // app display functions
+    221          static void zclSampleLight_LcdDisplayUpdate( void );
+    222          #ifdef LCD_SUPPORTED
+    223          static void zclSampleLight_LcdDisplayMainMode( void );
+    224          static void zclSampleLight_LcdDisplayHelpMode( void );
+    225          #endif
+    226          static void zclSampleLight_DisplayLight( void );
+    227          
+    228          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+    229          void zclSampleLight_UpdateLampLevel( uint8 level );
+    230          #endif
+    231          
+    232          // Functions to process ZCL Foundation incoming Command/Response messages
+    233          static void zclSampleLight_ProcessIncomingMsg( zclIncomingMsg_t *msg );
+    234          #ifdef ZCL_READ
+    235          static uint8 zclSampleLight_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+    236          #endif
+    237          #ifdef ZCL_WRITE
+    238          static uint8 zclSampleLight_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+    239          #endif
+    240          static uint8 zclSampleLight_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+    241          #ifdef ZCL_DISCOVER
+    242          static uint8 zclSampleLight_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+    243          static uint8 zclSampleLight_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+    244          static uint8 zclSampleLight_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+    245          #endif
+    246          
+    247          /*********************************************************************
+    248           * STATUS STRINGS
+    249           */
+    250          #ifdef LCD_SUPPORTED
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    251          const char sDeviceName[]   = "  Sample Light";
+   \                     sDeviceName:
+   \   000000   20205361     DB "  Sample Light"
+   \            6D706C65
+   \            204C6967
+   \            687400  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    252          const char sClearLine[]    = " ";
+   \                     sClearLine:
+   \   000000   2000         DB " "
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    253          const char sSwLight[]      = "SW1: ToggleLight";  // 16 chars max
+   \                     sSwLight:
+   \   000000   5357313A     DB "SW1: ToggleLight"
+   \            20546F67
+   \            676C654C
+   \            69676874
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    254          const char sSwEZMode[]     = "SW2: EZ-Mode";
+   \                     sSwEZMode:
+   \   000000   5357323A     DB "SW2: EZ-Mode"
+   \            20455A2D
+   \            4D6F6465
+   \            00      
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    255          char sSwHelp[]             = "SW5: Help       ";  // last character is * if NWK open
+   \                     sSwHelp:
+   \   000000                DS 17
+   \   000011                REQUIRE `?<Initializer for sSwHelp>`
+   \   000011                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    256          const char sLightOn[]      = "    LIGHT ON ";
+   \                     sLightOn:
+   \   000000   20202020     DB "    LIGHT ON "
+   \            4C494748
+   \            54204F4E
+   \            2000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    257          const char sLightOff[]     = "    LIGHT OFF";
+   \                     sLightOff:
+   \   000000   20202020     DB "    LIGHT OFF"
+   \            4C494748
+   \            54204F46
+   \            4600    
+    258           #if ZCL_LEVEL_CTRL
+    259           char sLightLevel[]        = "    LEVEL ###"; // displays level 1-254
+    260           #endif
+    261          #endif
+    262          
+    263          /*********************************************************************
+    264           * ZCL General Profile Callback table
+    265           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    266          static zclGeneral_AppCallbacks_t zclSampleLight_CmdCallbacks =
+   \                     zclSampleLight_CmdCallbacks:
+   \   000000                DS 32
+   \   000020                REQUIRE `?<Initializer for zclSampleLight_CmdCallbacks>`
+   \   000020                REQUIRE __INIT_XDATA_I
+    267          {
+    268            zclSampleLight_BasicResetCB,            // Basic Cluster Reset command
+    269            zclSampleLight_IdentifyCB,              // Identify command
+    270          #ifdef ZCL_EZMODE
+    271            NULL,                                   // Identify EZ-Mode Invoke command
+    272            NULL,                                   // Identify Update Commission State command
+    273          #endif
+    274            NULL,                                   // Identify Trigger Effect command
+    275            zclSampleLight_IdentifyQueryRspCB,      // Identify Query Response command
+    276            zclSampleLight_OnOffCB,                 // On/Off cluster commands
+    277            NULL,                                   // On/Off cluster enhanced command Off with Effect
+    278            NULL,                                   // On/Off cluster enhanced command On with Recall Global Scene
+    279            NULL,                                   // On/Off cluster enhanced command On with Timed Off
+    280          #ifdef ZCL_LEVEL_CTRL
+    281            zclSampleLight_LevelControlMoveToLevelCB, // Level Control Move to Level command
+    282            zclSampleLight_LevelControlMoveCB,        // Level Control Move command
+    283            zclSampleLight_LevelControlStepCB,        // Level Control Step command
+    284            zclSampleLight_LevelControlStopCB,        // Level Control Stop command
+    285          #endif
+    286          #ifdef ZCL_GROUPS
+    287            NULL,                                   // Group Response commands
+    288          #endif
+    289          #ifdef ZCL_SCENES
+    290            NULL,                                  // Scene Store Request command
+    291            NULL,                                  // Scene Recall Request command
+    292            NULL,                                  // Scene Response command
+    293          #endif
+    294          #ifdef ZCL_ALARMS
+    295            NULL,                                  // Alarm (Response) commands
+    296          #endif
+    297          #ifdef SE_UK_EXT
+    298            NULL,                                  // Get Event Log command
+    299            NULL,                                  // Publish Event Log command
+    300          #endif
+    301            NULL,                                  // RSSI Location command
+    302            NULL                                   // RSSI Location Response command
+    303          };
+    304          
+    305          /*********************************************************************
+    306           * @fn          zclSampleLight_Init
+    307           *
+    308           * @brief       Initialization function for the zclGeneral layer.
+    309           *
+    310           * @param       none
+    311           *
+    312           * @return      none
+    313           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    314          void zclSampleLight_Init( byte task_id )
+   \                     zclSampleLight_Init:
+    315          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    316            zclSampleLight_TaskID = task_id;
+   \   000007   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   00000A   F0           MOVX      @DPTR,A
+    317          
+    318            // Set destination address to indirect
+    319            zclSampleLight_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   00000B   90....       MOV       DPTR,#zclSampleLight_DstAddr + 8
+   \   00000E   E4           CLR       A
+   \   00000F   F0           MOVX      @DPTR,A
+    320            zclSampleLight_DstAddr.endPoint = 0;
+   \   000010   A3           INC       DPTR
+   \   000011   F0           MOVX      @DPTR,A
+    321            zclSampleLight_DstAddr.addr.shortAddr = 0;
+   \   000012   90....       MOV       DPTR,#zclSampleLight_DstAddr
+   \   000015   F0           MOVX      @DPTR,A
+   \   000016   A3           INC       DPTR
+   \   000017   F0           MOVX      @DPTR,A
+    322          
+    323            // This app is part of the Home Automation Profile
+    324            zclHA_Init( &zclSampleLight_SimpleDesc );
+   \   000018                ; Setup parameters for call to function zclHA_Init
+   \   000018   7A..         MOV       R2,#zclSampleLight_SimpleDesc & 0xff
+   \   00001A   7B..         MOV       R3,#(zclSampleLight_SimpleDesc >> 8) & 0xff
+   \   00001C   12....       LCALL     `??zclHA_Init::?relay`; Banked call to: zclHA_Init
+    325          
+    326            // Register the ZCL General Cluster Library callback functions
+    327            zclGeneral_RegisterCmdCallbacks( SAMPLELIGHT_ENDPOINT, &zclSampleLight_CmdCallbacks );
+   \   00001F                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   00001F   7A..         MOV       R2,#zclSampleLight_CmdCallbacks & 0xff
+   \   000021   7B..         MOV       R3,#(zclSampleLight_CmdCallbacks >> 8) & 0xff
+   \   000023   7908         MOV       R1,#0x8
+   \   000025   12....       LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+    328          
+    329            // Register the application's attribute list
+    330            zcl_registerAttrList( SAMPLELIGHT_ENDPOINT, zclSampleLight_NumAttributes, zclSampleLight_Attrs );
+   \   000028                ; Setup parameters for call to function zcl_registerAttrList
+   \   000028   7C..         MOV       R4,#zclSampleLight_Attrs & 0xff
+   \   00002A   7D..         MOV       R5,#(zclSampleLight_Attrs >> 8) & 0xff
+   \   00002C   90....       MOV       DPTR,#zclSampleLight_NumAttributes
+   \   00002F   E4           CLR       A
+   \   000030   93           MOVC      A,@A+DPTR
+   \   000031   FA           MOV       R2,A
+   \   000032   7908         MOV       R1,#0x8
+   \   000034   12....       LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+    331          
+    332            // Register the Application to receive the unprocessed Foundation command/response messages
+    333            zcl_registerForMsg( zclSampleLight_TaskID );
+   \   000037                ; Setup parameters for call to function zcl_registerForMsg
+   \   000037   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   00003A   E0           MOVX      A,@DPTR
+   \   00003B   F9           MOV       R1,A
+   \   00003C   12....       LCALL     `??zcl_registerForMsg::?relay`; Banked call to: zcl_registerForMsg
+    334          
+    335          #ifdef ZCL_DISCOVER
+    336            // Register the application's command list
+    337            zcl_registerCmdList( SAMPLELIGHT_ENDPOINT, zclCmdsArraySize, zclSampleLight_Cmds );
+    338          #endif
+    339          
+    340            // Register for all key events - This app will handle all key events
+    341            RegisterForKeys( zclSampleLight_TaskID );
+   \   00003F                ; Setup parameters for call to function RegisterForKeys
+   \   00003F   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   F9           MOV       R1,A
+   \   000044   12....       LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+    342          
+    343            // Register for a test endpoint
+    344            afRegister( &sampleLight_TestEp );
+   \   000047                ; Setup parameters for call to function afRegister
+   \   000047   7A..         MOV       R2,#sampleLight_TestEp & 0xff
+   \   000049   7B..         MOV       R3,#(sampleLight_TestEp >> 8) & 0xff
+   \   00004B   12....       LCALL     `??afRegister::?relay`; Banked call to: afRegister
+    345          
+    346          #ifdef ZCL_EZMODE
+    347            // Register EZ-Mode
+    348            zcl_RegisterEZMode( &zclSampleLight_RegisterEZModeData );
+   \   00004E                ; Setup parameters for call to function zcl_RegisterEZMode
+   \   00004E   7A..         MOV       R2,#zclSampleLight_RegisterEZModeData & 0xff
+   \   000050   7B..         MOV       R3,#(zclSampleLight_RegisterEZModeData >> 8) & 0xff
+   \   000052   12....       LCALL     `??zcl_RegisterEZMode::?relay`; Banked call to: zcl_RegisterEZMode
+    349          
+    350            // Register with the ZDO to receive Match Descriptor Responses
+    351            ZDO_RegisterForZDOMsg(task_id, Match_Desc_rsp);
+   \   000055                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000055   7A06         MOV       R2,#0x6
+   \   000057   7B80         MOV       R3,#-0x80
+   \   000059   EE           MOV       A,R6
+   \   00005A   F9           MOV       R1,A
+   \   00005B   12....       LCALL     `??ZDO_RegisterForZDOMsg::?relay`; Banked call to: ZDO_RegisterForZDOMsg
+    352          #endif
+    353          
+    354          
+    355          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+    356            HalTimer1Init( 0 );
+    357            halTimer1SetChannelDuty( WHITE_LED, 0 );
+    358            halTimer1SetChannelDuty( RED_LED, 0 );
+    359            halTimer1SetChannelDuty( BLUE_LED, 0 );
+    360            halTimer1SetChannelDuty( GREEN_LED, 0 );
+    361          
+    362            // find if we are already on a network from NV_RESTORE
+    363            uint8 state;
+    364            NLME_GetRequest( nwkNwkState, 0, &state );
+    365          
+    366            if ( state < NWK_ENDDEVICE )
+    367            {
+    368              // Start EZMode on Start up to avoid button press
+    369              osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_START_EZMODE_EVT, 500 );
+    370            }
+    371          #if ZCL_LEVEL_CTRL
+    372            zclSampleLight_DefaultMove();
+    373          #endif
+    374          #endif // #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+    375          
+    376          #ifdef ZCL_DIAGNOSTIC
+    377            // Register the application's callback function to read/write attribute data.
+    378            // This is only required when the attribute data format is unknown to ZCL.
+    379            zcl_registerReadWriteCB( SAMPLELIGHT_ENDPOINT, zclDiagnostic_ReadWriteAttrCB, NULL );
+   \   00005E                ; Setup parameters for call to function zcl_registerReadWriteCB
+   \   00005E   7C00         MOV       R4,#0x0
+   \   000060   7D00         MOV       R5,#0x0
+   \   000062   7A..         MOV       R2,#`??zclDiagnostic_ReadWriteAttrCB::?relay` & 0xff
+   \   000064   7B..         MOV       R3,#(`??zclDiagnostic_ReadWriteAttrCB::?relay` >> 8) & 0xff
+   \   000066   7908         MOV       R1,#0x8
+   \   000068   12....       LCALL     `??zcl_registerReadWriteCB::?relay`; Banked call to: zcl_registerReadWriteCB
+    380          
+    381            if ( zclDiagnostic_InitStats() == ZSuccess )
+   \   00006B                ; Setup parameters for call to function zclDiagnostic_InitStats
+   \   00006B   12....       LCALL     `??zclDiagnostic_InitStats::?relay`; Banked call to: zclDiagnostic_InitStats
+    382            {
+    383              // Here the user could start the timer to save Diagnostics to NV
+    384            }
+    385          #endif
+    386          
+    387          #ifdef LCD_SUPPORTED
+    388            HalLcdWriteString ( (char *)sDeviceName, HAL_LCD_LINE_3 );
+   \   00006E                ; Setup parameters for call to function HalLcdWriteString
+   \   00006E   7903         MOV       R1,#0x3
+   \   000070   7A..         MOV       R2,#sDeviceName & 0xff
+   \   000072   7B..         MOV       R3,#(sDeviceName >> 8) & 0xff
+   \   000074   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+    389          #endif  // LCD_SUPPORTED
+    390          
+    391          #ifdef ZGP_AUTO_TT
+    392            zgpTranslationTable_RegisterEP ( &zclSampleLight_SimpleDesc );
+    393          #endif
+    394            
+    395            // Initialize the UV control
+    396            P0SEL &= ~(BV(4));    /* Set pin function to GPIO */
+   \   000077   53F3EF       ANL       0xf3,#0xef
+    397            P0DIR |= BV(4);       /* Set pin direction to Output */
+   \   00007A   43FD10       ORL       0xfd,#0x10
+    398            
+    399            // Automatically turn on the UV
+    400            zclSampleLight_OnOff = LIGHT_ON; 
+   \   00007D   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   000080   7401         MOV       A,#0x1
+   \   000082   F0           MOVX      @DPTR,A
+    401            zclSampleLight_LcdDisplayUpdate();
+   \   000083                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000083   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+    402          }
+   \   000086                REQUIRE ?Subroutine0
+   \   000086                REQUIRE P0SEL
+   \   000086                REQUIRE P0DIR
+   \   000086                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    403          
+    404          /*********************************************************************
+    405           * @fn          zclSample_event_loop
+    406           *
+    407           * @brief       Event Loop Processor for zclGeneral.
+    408           *
+    409           * @param       none
+    410           *
+    411           * @return      none
+    412           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    413          uint16 zclSampleLight_event_loop( uint8 task_id, uint16 events )
+   \                     zclSampleLight_event_loop:
+    414          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV       A,#-0x2
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    415            afIncomingMSGPacket_t *MSGpkt;
+    416          
+    417            (void)task_id;  // Intentionally unreferenced parameter
+    418          
+    419            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL       A,#0x80
+   \   000010   704A         JNZ       ??zclSampleLight_event_loop_0
+    420            {
+    421              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclSampleLight_TaskID )) )
+    422              {
+    423                switch ( MSGpkt->hdr.event )
+    424                {
+    425          #ifdef ZCL_EZMODE
+    426                  case ZDO_CB_MSG:
+    427                    zclSampleLight_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    428                    break;
+    429          #endif
+    430                  case ZCL_INCOMING_MSG:
+    431                    // Incoming ZCL Foundation command/response messages
+    432                    zclSampleLight_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+    433                    break;
+    434          
+    435                  case KEY_CHANGE:
+    436                    zclSampleLight_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    437                    break;
+    438          
+    439                  case ZDO_STATE_CHANGE:
+    440                    zclSampleLight_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    441          
+    442                    // now on the network
+    443                    if ( (zclSampleLight_NwkState == DEV_ZB_COORD) ||
+    444                         (zclSampleLight_NwkState == DEV_ROUTER)   ||
+    445                         (zclSampleLight_NwkState == DEV_END_DEVICE) )
+    446                    {
+    447                      giLightScreenMode = LIGHT_MAINMODE;
+    448                      zclSampleLight_LcdDisplayUpdate();
+    449          #ifdef ZCL_EZMODE
+    450                      zcl_EZModeAction( EZMODE_ACTION_NETWORK_STARTED, NULL );
+    451          #endif // ZCL_EZMODE
+    452                    }
+    453                    break;
+    454          
+    455                  default:
+    456                    break;
+    457                }
+    458          
+    459                // Release the memory
+    460                osal_msg_deallocate( (uint8 *)MSGpkt );
+    461              }
+    462          
+    463              // return unprocessed events
+    464              return (events ^ SYS_EVENT_MSG);
+    465            }
+    466          
+    467            /* Turn off the UV automatically */
+    468            if ( events & SAMPLELIGHT_TURNOFF_UV_EVT )
+   \   000012   EA           MOV       A,R2
+   \   000013   5480         ANL       A,#0x80
+   \   000015   7003         JNZ       $+5
+   \   000017   02....       LJMP      ??zclSampleLight_event_loop_1 & 0xFFFF
+    469            {   
+    470              osal_stop_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_TURNOFF_UV_EVT );
+   \   00001A                ; Setup parameters for call to function osal_stop_timerEx
+   \   00001A   12....       LCALL     ?Subroutine6 & 0xFFFF
+    471              zclSampleLight_OnOff = LIGHT_OFF;
+   \                     ??CrossCallReturnLabel_7:
+   \   00001D   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   000020   E4           CLR       A
+   \   000021   F0           MOVX      @DPTR,A
+    472              UV_Auto_Turn_Off = 1;
+   \   000022   90....       MOV       DPTR,#UV_Auto_Turn_Off
+   \   000025   04           INC       A
+   \   000026   F0           MOVX      @DPTR,A
+    473              zclSampleLight_LcdDisplayUpdate();
+   \   000027                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000027   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+    474              return ( events ^ SAMPLELIGHT_TURNOFF_UV_EVT );
+   \   00002A   EE           MOV       A,R6
+   \   00002B   6480         XRL       A,#0x80
+   \   00002D   02....       LJMP      ??zclSampleLight_event_loop_2 & 0xFFFF
+    475            }  
+   \                     ??zclSampleLight_event_loop_3:
+   \   000030   A3           INC       DPTR
+   \   000031   E0           MOVX      A,@DPTR
+   \   000032   90....       MOV       DPTR,#zclSampleLight_NwkState
+   \   000035   F0           MOVX      @DPTR,A
+   \   000036   6409         XRL       A,#0x9
+   \   000038   600A         JZ        ??zclSampleLight_event_loop_4
+   \   00003A   E0           MOVX      A,@DPTR
+   \   00003B   6407         XRL       A,#0x7
+   \   00003D   6005         JZ        ??zclSampleLight_event_loop_4
+   \   00003F   E0           MOVX      A,@DPTR
+   \   000040   6406         XRL       A,#0x6
+   \   000042   7011         JNZ       ??zclSampleLight_event_loop_5
+   \                     ??zclSampleLight_event_loop_4:
+   \   000044   90....       MOV       DPTR,#giLightScreenMode
+   \   000047   E4           CLR       A
+   \   000048   F0           MOVX      @DPTR,A
+   \   000049                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000049   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+   \   00004C                ; Setup parameters for call to function zcl_EZModeAction
+   \   00004C   7A00         MOV       R2,#0x0
+   \   00004E   7B00         MOV       R3,#0x0
+   \   000050   7902         MOV       R1,#0x2
+   \   000052   12....       LCALL     `??zcl_EZModeAction::?relay`; Banked call to: zcl_EZModeAction
+   \                     ??zclSampleLight_event_loop_5:
+   \   000055                ; Setup parameters for call to function osal_msg_deallocate
+   \   000055   AA..         MOV       R2,?V0
+   \   000057   AB..         MOV       R3,?V1
+   \   000059   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \                     ??zclSampleLight_event_loop_0:
+   \   00005C                ; Setup parameters for call to function osal_msg_receive
+   \   00005C   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   00005F   E0           MOVX      A,@DPTR
+   \   000060   F9           MOV       R1,A
+   \   000061   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   000064   8A..         MOV       ?V0,R2
+   \   000066   8B..         MOV       ?V1,R3
+   \   000068   EA           MOV       A,R2
+   \   000069   4B           ORL       A,R3
+   \   00006A   7003         JNZ       $+5
+   \   00006C   02....       LJMP      ??zclSampleLight_event_loop_6 & 0xFFFF
+   \   00006F   8A82         MOV       DPL,R2
+   \   000071   8B83         MOV       DPH,R3
+   \   000073   E0           MOVX      A,@DPTR
+   \   000074   24CC         ADD       A,#-0x34
+   \   000076   6039         JZ        ??zclSampleLight_event_loop_7
+   \   000078   2474         ADD       A,#0x74
+   \   00007A   607C         JZ        ??zclSampleLight_event_loop_8
+   \   00007C   24EF         ADD       A,#-0x11
+   \   00007E   60B0         JZ        ??zclSampleLight_event_loop_3
+   \   000080   24FE         ADD       A,#-0x2
+   \   000082   70D1         JNZ       ??zclSampleLight_event_loop_5
+   \   000084   EA           MOV       A,R2
+   \   000085   240C         ADD       A,#0xc
+   \   000087   F582         MOV       DPL,A
+   \   000089   E4           CLR       A
+   \   00008A   35..         ADDC      A,?V1
+   \   00008C   F583         MOV       DPH,A
+   \   00008E   E0           MOVX      A,@DPTR
+   \   00008F   6406         XRL       A,#0x6
+   \   000091   7004         JNZ       ??zclSampleLight_event_loop_9
+   \   000093   A3           INC       DPTR
+   \   000094   E0           MOVX      A,@DPTR
+   \   000095   6480         XRL       A,#0x80
+   \                     ??zclSampleLight_event_loop_9:
+   \   000097   70BC         JNZ       ??zclSampleLight_event_loop_5
+   \   000099                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   000099   12....       LCALL     `??ZDO_ParseEPListRsp::?relay`; Banked call to: ZDO_ParseEPListRsp
+   \   00009C   8A..         MOV       ?V2,R2
+   \   00009E   8B..         MOV       ?V3,R3
+   \   0000A0   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   0000A3   7905         MOV       R1,#0x5
+   \   0000A5   12....       LCALL     `??zcl_EZModeAction::?relay`; Banked call to: zcl_EZModeAction
+   \   0000A8                ; Setup parameters for call to function osal_mem_free
+   \   0000A8   AA..         MOV       R2,?V2
+   \   0000AA   AB..         MOV       R3,?V3
+   \                     ??zclSampleLight_event_loop_10:
+   \   0000AC   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   0000AF   80A4         SJMP      ??zclSampleLight_event_loop_5
+   \                     ??zclSampleLight_event_loop_7:
+   \   0000B1   EA           MOV       A,R2
+   \   0000B2   2417         ADD       A,#0x17
+   \   0000B4   F8           MOV       R0,A
+   \   0000B5   E4           CLR       A
+   \   0000B6   35..         ADDC      A,?V1
+   \   0000B8   F9           MOV       R1,A
+   \   0000B9   E8           MOV       A,R0
+   \   0000BA   FA           MOV       R2,A
+   \   0000BB   E9           MOV       A,R1
+   \   0000BC   FB           MOV       R3,A
+   \   0000BD   A3           INC       DPTR
+   \   0000BE   A3           INC       DPTR
+   \   0000BF   A3           INC       DPTR
+   \   0000C0   A3           INC       DPTR
+   \   0000C1   A3           INC       DPTR
+   \   0000C2   A3           INC       DPTR
+   \   0000C3   A3           INC       DPTR
+   \   0000C4   E0           MOVX      A,@DPTR
+   \   0000C5   14           DEC       A
+   \   0000C6   6011         JZ        ??zclSampleLight_event_loop_11
+   \   0000C8   24FD         ADD       A,#-0x3
+   \   0000CA   701A         JNZ       ??zclSampleLight_event_loop_12
+   \   0000CC   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0000CF   E0           MOVX      A,@DPTR
+   \   0000D0   F9           MOV       R1,A
+   \   0000D1   E8           MOV       A,R0
+   \   0000D2   C3           CLR       C
+   \   0000D3   99           SUBB      A,R1
+   \   0000D4   5010         JNC       ??zclSampleLight_event_loop_12
+   \   0000D6   08           INC       R0
+   \   0000D7   80F6         SJMP      ??CrossCallReturnLabel_3
+   \                     ??zclSampleLight_event_loop_11:
+   \   0000D9   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   0000DC   8001         SJMP      ??zclSampleLight_event_loop_13
+   \                     ??zclSampleLight_event_loop_14:
+   \   0000DE   08           INC       R0
+   \                     ??zclSampleLight_event_loop_13:
+   \   0000DF   E0           MOVX      A,@DPTR
+   \   0000E0   F9           MOV       R1,A
+   \   0000E1   E8           MOV       A,R0
+   \   0000E2   C3           CLR       C
+   \   0000E3   99           SUBB      A,R1
+   \   0000E4   40F8         JC        ??zclSampleLight_event_loop_14
+   \                     ??zclSampleLight_event_loop_12:
+   \   0000E6   8A82         MOV       DPL,R2
+   \   0000E8   8B83         MOV       DPH,R3
+   \   0000EA   E0           MOVX      A,@DPTR
+   \   0000EB   FA           MOV       R2,A
+   \   0000EC   A3           INC       DPTR
+   \   0000ED   E0           MOVX      A,@DPTR
+   \   0000EE   FB           MOV       R3,A
+   \   0000EF   EA           MOV       A,R2
+   \   0000F0   4B           ORL       A,R3
+   \   0000F1   7003         JNZ       $+5
+   \   0000F3   02....       LJMP      ??zclSampleLight_event_loop_5 & 0xFFFF
+   \   0000F6                ; Setup parameters for call to function osal_mem_free
+   \   0000F6   80B4         SJMP      ??zclSampleLight_event_loop_10
+   \                     ??zclSampleLight_event_loop_8:
+   \   0000F8   A3           INC       DPTR
+   \   0000F9   A3           INC       DPTR
+   \   0000FA   A3           INC       DPTR
+   \   0000FB   E0           MOVX      A,@DPTR
+   \   0000FC   F5..         MOV       ?V2,A
+   \   0000FE   A2E5         MOV       C,0xE0 /* A   */.5
+   \   000100   5003         JNC       ??zclSampleLight_event_loop_15
+   \   000102                ; Setup parameters for call to function zclSampleLight_BasicResetCB
+   \   000102   12....       LCALL     `??zclSampleLight_BasicResetCB::?relay`; Banked call to: zclSampleLight_BasicResetCB
+   \                     ??zclSampleLight_event_loop_15:
+   \   000105   E5..         MOV       A,?V2
+   \   000107   A2E2         MOV       C,0xE0 /* A   */.2
+   \   000109   5009         JNC       ??zclSampleLight_event_loop_16
+   \   00010B   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   00010E   E4           CLR       A
+   \   00010F   F0           MOVX      @DPTR,A
+   \   000110   90....       MOV       DPTR,#UV_Auto_Turn_Off
+   \   000113   F0           MOVX      @DPTR,A
+   \                     ??zclSampleLight_event_loop_16:
+   \   000114   E5..         MOV       A,?V2
+   \   000116   A2E4         MOV       C,0xE0 /* A   */.4
+   \   000118   5006         JNC       ??zclSampleLight_event_loop_17
+   \   00011A   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   00011D   7401         MOV       A,#0x1
+   \   00011F   F0           MOVX      @DPTR,A
+   \                     ??zclSampleLight_event_loop_17:
+   \   000120                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000120   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+   \   000123   02....       LJMP      ??zclSampleLight_event_loop_5 & 0xFFFF
+   \                     ??zclSampleLight_event_loop_6:
+   \   000126   EE           MOV       A,R6
+   \   000127   FA           MOV       R2,A
+   \   000128   EF           MOV       A,R7
+   \   000129   6480         XRL       A,#0x80
+   \   00012B   8057         SJMP      ??zclSampleLight_event_loop_18
+    476          
+    477            if ( events & SAMPLELIGHT_IDENTIFY_TIMEOUT_EVT )
+   \                     ??zclSampleLight_event_loop_1:
+   \   00012D   EA           MOV       A,R2
+   \   00012E   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000130   501B         JNC       ??zclSampleLight_event_loop_19
+    478            {
+    479              if ( zclSampleLight_IdentifyTime > 0 )
+   \   000132   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000135   E8           MOV       A,R0
+   \   000136   49           ORL       A,R1
+   \   000137   600C         JZ        ??zclSampleLight_event_loop_20
+    480                zclSampleLight_IdentifyTime--;
+   \   000139   90....       MOV       DPTR,#zclSampleLight_IdentifyTime
+   \   00013C   E0           MOVX      A,@DPTR
+   \   00013D   24FF         ADD       A,#-0x1
+   \   00013F   F0           MOVX      @DPTR,A
+   \   000140   A3           INC       DPTR
+   \   000141   E0           MOVX      A,@DPTR
+   \   000142   34FF         ADDC      A,#-0x1
+   \   000144   F0           MOVX      @DPTR,A
+    481              zclSampleLight_ProcessIdentifyTimeChange();
+   \                     ??zclSampleLight_event_loop_20:
+   \   000145                ; Setup parameters for call to function zclSampleLight_ProcessIdentifyTimeChange
+   \   000145   12....       LCALL     `??zclSampleLight_ProcessIdentifyTimeChange::?re`; Banked call to: zclSampleLight_ProcessIdentifyTimeChange
+    482          
+    483              return ( events ^ SAMPLELIGHT_IDENTIFY_TIMEOUT_EVT );
+   \   000148   EE           MOV       A,R6
+   \   000149   6401         XRL       A,#0x1
+   \   00014B   8035         SJMP      ??zclSampleLight_event_loop_2
+    484            }
+    485          
+    486            if ( events & SAMPLELIGHT_MAIN_SCREEN_EVT )
+   \                     ??zclSampleLight_event_loop_19:
+   \   00014D   5410         ANL       A,#0x10
+   \   00014F   600D         JZ        ??zclSampleLight_event_loop_21
+    487            {
+    488              giLightScreenMode = LIGHT_MAINMODE;
+   \   000151   90....       MOV       DPTR,#giLightScreenMode
+   \   000154   E4           CLR       A
+   \   000155   F0           MOVX      @DPTR,A
+    489              zclSampleLight_LcdDisplayUpdate();
+   \   000156                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000156   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+    490          
+    491              return ( events ^ SAMPLELIGHT_MAIN_SCREEN_EVT );
+   \   000159   EE           MOV       A,R6
+   \   00015A   6410         XRL       A,#0x10
+   \   00015C   8024         SJMP      ??zclSampleLight_event_loop_2
+    492            }
+    493          
+    494          #ifdef ZCL_EZMODE
+    495          #if (defined HAL_BOARD_ZLIGHT)
+    496            // event to start EZMode on startup with a delay
+    497            if ( events & SAMPLELIGHT_START_EZMODE_EVT )
+    498            {
+    499              // Invoke EZ-Mode
+    500              zclEZMode_InvokeData_t ezModeData;
+    501          
+    502              // Invoke EZ-Mode
+    503              ezModeData.endpoint = SAMPLELIGHT_ENDPOINT; // endpoint on which to invoke EZ-Mode
+    504              if ( (zclSampleLight_NwkState == DEV_ZB_COORD) ||
+    505                   (zclSampleLight_NwkState == DEV_ROUTER)   ||
+    506                   (zclSampleLight_NwkState == DEV_END_DEVICE) )
+    507              {
+    508                ezModeData.onNetwork = TRUE;      // node is already on the network
+    509              }
+    510              else
+    511              {
+    512                ezModeData.onNetwork = FALSE;     // node is not yet on the network
+    513              }
+    514              ezModeData.initiator = FALSE;          // OnOffLight is a target
+    515              ezModeData.numActiveOutClusters = 0;
+    516              ezModeData.pActiveOutClusterIDs = NULL;
+    517              ezModeData.numActiveInClusters = 0;
+    518              ezModeData.pActiveOutClusterIDs = NULL;
+    519              zcl_InvokeEZMode( &ezModeData );
+    520          
+    521              return ( events ^ SAMPLELIGHT_START_EZMODE_EVT );
+    522            }
+    523          #endif // #if (defined HAL_BOARD_ZLIGHT)
+    524          
+    525            // going on to next state
+    526            if ( events & SAMPLELIGHT_EZMODE_NEXTSTATE_EVT )
+   \                     ??zclSampleLight_event_loop_21:
+   \   00015E   EA           MOV       A,R2
+   \   00015F   5408         ANL       A,#0x8
+   \   000161   600E         JZ        ??zclSampleLight_event_loop_22
+    527            {
+    528              zcl_EZModeAction ( EZMODE_ACTION_PROCESS, NULL );   // going on to next state
+   \   000163                ; Setup parameters for call to function zcl_EZModeAction
+   \   000163   7A00         MOV       R2,#0x0
+   \   000165   7B00         MOV       R3,#0x0
+   \   000167   7901         MOV       R1,#0x1
+   \   000169   12....       LCALL     `??zcl_EZModeAction::?relay`; Banked call to: zcl_EZModeAction
+    529              return ( events ^ SAMPLELIGHT_EZMODE_NEXTSTATE_EVT );
+   \   00016C   EE           MOV       A,R6
+   \   00016D   6408         XRL       A,#0x8
+   \   00016F   8011         SJMP      ??zclSampleLight_event_loop_2
+    530            }
+    531          
+    532            // the overall EZMode timer expired, so we timed out
+    533            if ( events & SAMPLELIGHT_EZMODE_TIMEOUT_EVT )
+   \                     ??zclSampleLight_event_loop_22:
+   \   000171   EA           MOV       A,R2
+   \   000172   5404         ANL       A,#0x4
+   \   000174   7A00         MOV       R2,#0x0
+   \   000176   7B00         MOV       R3,#0x0
+   \   000178   600B         JZ        ??zclSampleLight_event_loop_23
+    534            {
+    535              zcl_EZModeAction ( EZMODE_ACTION_TIMED_OUT, NULL ); // EZ-Mode timed out
+   \   00017A                ; Setup parameters for call to function zcl_EZModeAction
+   \   00017A   7963         MOV       R1,#0x63
+   \   00017C   12....       LCALL     `??zcl_EZModeAction::?relay`; Banked call to: zcl_EZModeAction
+    536              return ( events ^ SAMPLELIGHT_EZMODE_TIMEOUT_EVT );
+   \   00017F   EE           MOV       A,R6
+   \   000180   6404         XRL       A,#0x4
+   \                     ??zclSampleLight_event_loop_2:
+   \   000182   FA           MOV       R2,A
+   \   000183   EF           MOV       A,R7
+   \                     ??zclSampleLight_event_loop_18:
+   \   000184   FB           MOV       R3,A
+    537            }
+    538          #endif // ZLC_EZMODE
+    539          
+    540          #ifdef ZCL_LEVEL_CTRL
+    541            if ( events & SAMPLELIGHT_LEVEL_CTRL_EVT )
+    542            {
+    543              zclSampleLight_AdjustLightLevel();
+    544              return ( events ^ SAMPLELIGHT_LEVEL_CTRL_EVT );
+    545            }
+    546          #endif
+    547          
+    548            // Discard unknown events
+    549            return 0;
+   \                     ??zclSampleLight_event_loop_23:
+   \   000185   7402         MOV       A,#0x2
+   \   000187   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00018A   7F06         MOV       R7,#0x6
+   \   00018C   02....       LJMP      ?BANKED_LEAVE_XDATA
+    550          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   7A80         MOV       R2,#-0x80
+   \   000002                REQUIRE ??Subroutine7_0
+   \   000002                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   7B00         MOV       R3,#0x0
+   \   000002   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   000005   E0           MOVX      A,@DPTR
+   \   000006   F9           MOV       R1,A
+   \   000007   12....       LCALL     `??osal_stop_timerEx::?relay`; Banked call to: osal_stop_timerEx
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   90....       MOV       DPTR,#zclSampleLight_IdentifyTime
+   \   000003                REQUIRE ??Subroutine8_0
+   \   000003                ; // Fall through to label ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F9           MOV       R1,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   8882         MOV       DPL,R0
+   \   000002   8983         MOV       DPH,R1
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F8           MOV       R0,A
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   8882         MOV       DPL,R0
+   \   00000A   F583         MOV       DPH,A
+   \   00000C   7800         MOV       R0,#0x0
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006   EA           MOV       A,R2
+   \   000007   F0           MOVX      @DPTR,A
+   \   000008   A3           INC       DPTR
+   \   000009   EB           MOV       A,R3
+   \   00000A   F0           MOVX      @DPTR,A
+   \   00000B                ; Setup parameters for call to function zcl_EZModeAction
+   \   00000B                ; Setup parameters for call to function zcl_EZModeAction
+   \   00000B   AA..         MOV       R2,?XSP + 0
+   \   00000D   AB..         MOV       R3,?XSP + 1
+   \   00000F   22           RET
+    551          
+    552          /*********************************************************************
+    553           * @fn      zclSampleLight_HandleKeys
+    554           *
+    555           * @brief   Handles all key events for this device.
+    556           *
+    557           * @param   shift - true if in shift/alt.
+    558           * @param   keys - bit field for key events. Valid entries:
+    559           *                 HAL_KEY_SW_5
+    560           *                 HAL_KEY_SW_4
+    561           *                 HAL_KEY_SW_2
+    562           *                 HAL_KEY_SW_1
+    563           *
+    564           * @return  none
+    565           */
+    566          static void zclSampleLight_HandleKeys( byte shift, byte keys )
+    567          {
+    568             if ( keys & HAL_KEY_SW_6 )
+    569            {
+    570              // toggle local light immediately
+    571              zclSampleLight_BasicResetCB();
+    572            }
+    573            
+    574            if ( keys & HAL_KEY_SW_5 )
+    575            {  
+    576              zclSampleLight_OnOff =LIGHT_OFF;
+    577              UV_Auto_Turn_Off = 0;
+    578            }
+    579            
+    580            if ( keys & HAL_KEY_SW_3 )
+    581            {  
+    582              zclSampleLight_OnOff =LIGHT_ON;
+    583            }
+    584          
+    585            // update the display, including the light
+    586            zclSampleLight_LcdDisplayUpdate();
+    587          }
+    588          
+    589          /*********************************************************************
+    590           * @fn      zclSampleLight_LcdDisplayUpdate
+    591           *
+    592           * @brief   Called to update the LCD display.
+    593           *
+    594           * @param   none
+    595           *
+    596           * @return  none
+    597           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    598          void zclSampleLight_LcdDisplayUpdate( void )
+   \                     zclSampleLight_LcdDisplayUpdate:
+    599          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    600          #ifdef LCD_SUPPORTED
+    601            if ( giLightScreenMode == LIGHT_HELPMODE )
+   \   000004   90....       MOV       DPTR,#giLightScreenMode
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   6401         XRL       A,#0x1
+   \   00000A   7014         JNZ       ??zclSampleLight_LcdDisplayUpdate_0
+    602            {
+    603              zclSampleLight_LcdDisplayHelpMode();
+   \   00000C                ; Setup parameters for call to function HalLcdWriteString
+   \   00000C   7901         MOV       R1,#0x1
+   \   00000E   7A..         MOV       R2,#sSwLight & 0xff
+   \   000010   7B..         MOV       R3,#(sSwLight >> 8) & 0xff
+   \   000012   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+   \   000015                ; Setup parameters for call to function HalLcdWriteString
+   \   000015   7902         MOV       R1,#0x2
+   \   000017   7A..         MOV       R2,#sSwEZMode & 0xff
+   \   000019   7B..         MOV       R3,#(sSwEZMode >> 8) & 0xff
+   \   00001B   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+   \   00001E                ; Setup parameters for call to function HalLcdWriteString
+   \   00001E   802F         SJMP      ??zclSampleLight_LcdDisplayUpdate_1
+    604            }
+    605            else
+    606            {
+    607              zclSampleLight_LcdDisplayMainMode();
+   \                     ??zclSampleLight_LcdDisplayUpdate_0:
+   \   000020   90....       MOV       DPTR,#zclSampleLight_NwkState
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   6409         XRL       A,#0x9
+   \   000026   7004         JNZ       ??zclSampleLight_LcdDisplayUpdate_2
+   \   000028                ; Setup parameters for call to function zclHA_LcdStatusLine1
+   \   000028   7900         MOV       R1,#0x0
+   \   00002A   8010         SJMP      ??zclSampleLight_LcdDisplayUpdate_3
+   \                     ??zclSampleLight_LcdDisplayUpdate_2:
+   \   00002C   E0           MOVX      A,@DPTR
+   \   00002D   6407         XRL       A,#0x7
+   \   00002F   7004         JNZ       ??zclSampleLight_LcdDisplayUpdate_4
+   \   000031                ; Setup parameters for call to function zclHA_LcdStatusLine1
+   \   000031   7901         MOV       R1,#0x1
+   \   000033   8007         SJMP      ??zclSampleLight_LcdDisplayUpdate_3
+   \                     ??zclSampleLight_LcdDisplayUpdate_4:
+   \   000035   E0           MOVX      A,@DPTR
+   \   000036   6406         XRL       A,#0x6
+   \   000038   7005         JNZ       ??zclSampleLight_LcdDisplayUpdate_5
+   \   00003A                ; Setup parameters for call to function zclHA_LcdStatusLine1
+   \   00003A   7902         MOV       R1,#0x2
+   \                     ??zclSampleLight_LcdDisplayUpdate_3:
+   \   00003C   12....       LCALL     `??zclHA_LcdStatusLine1::?relay`; Banked call to: zclHA_LcdStatusLine1
+   \                     ??zclSampleLight_LcdDisplayUpdate_5:
+   \   00003F   90....       MOV       DPTR,#gPermitDuration
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   90....       MOV       DPTR,#sSwHelp + 15
+   \   000046   6004         JZ        ??zclSampleLight_LcdDisplayUpdate_6
+   \   000048   742A         MOV       A,#0x2a
+   \   00004A   8002         SJMP      ??zclSampleLight_LcdDisplayUpdate_7
+   \                     ??zclSampleLight_LcdDisplayUpdate_6:
+   \   00004C   7420         MOV       A,#0x20
+   \                     ??zclSampleLight_LcdDisplayUpdate_7:
+   \   00004E   F0           MOVX      @DPTR,A
+   \                     ??zclSampleLight_LcdDisplayUpdate_1:
+   \   00004F                ; Setup parameters for call to function HalLcdWriteString
+   \   00004F   7903         MOV       R1,#0x3
+   \   000051   7A..         MOV       R2,#sSwHelp & 0xff
+   \   000053   7B..         MOV       R3,#(sSwHelp >> 8) & 0xff
+   \   000055   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+    608            }
+    609          #endif
+    610          
+    611            zclSampleLight_DisplayLight();
+   \   000058   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   00005B   E0           MOVX      A,@DPTR
+   \   00005C   6401         XRL       A,#0x1
+   \   00005E   701E         JNZ       ??zclSampleLight_LcdDisplayUpdate_8
+   \   000060                ; Setup parameters for call to function HalLedSet
+   \   000060   7A01         MOV       R2,#0x1
+   \   000062   7902         MOV       R1,#0x2
+   \   000064   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+   \   000067                ; Setup parameters for call to function HalLedSet
+   \   000067   7A01         MOV       R2,#0x1
+   \   000069   7901         MOV       R1,#0x1
+   \   00006B   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+   \   00006E                ; Setup parameters for call to function osal_start_timerEx
+   \   00006E   90....       MOV       DPTR,#__Constant_ea60
+   \   000071   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000074   7A80         MOV       R2,#-0x80
+   \   000076   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000079   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00007C   8011         SJMP      ??CrossCallReturnLabel_8
+   \                     ??zclSampleLight_LcdDisplayUpdate_8:
+   \   00007E                ; Setup parameters for call to function HalLedSet
+   \   00007E   7A00         MOV       R2,#0x0
+   \   000080   7902         MOV       R1,#0x2
+   \   000082   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+   \   000085                ; Setup parameters for call to function HalLedSet
+   \   000085   7A00         MOV       R2,#0x0
+   \   000087   7901         MOV       R1,#0x1
+   \   000089   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+   \   00008C                ; Setup parameters for call to function osal_stop_timerEx
+   \   00008C   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00008F   90....       MOV       DPTR,#giLightScreenMode
+   \   000092   E0           MOVX      A,@DPTR
+   \   000093   7015         JNZ       ??zclSampleLight_LcdDisplayUpdate_9
+   \   000095   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   000098   E0           MOVX      A,@DPTR
+   \   000099   7902         MOV       R1,#0x2
+   \   00009B   6006         JZ        ??zclSampleLight_LcdDisplayUpdate_10
+   \   00009D                ; Setup parameters for call to function HalLcdWriteString
+   \   00009D   7A..         MOV       R2,#sLightOn & 0xff
+   \   00009F   7B..         MOV       R3,#(sLightOn >> 8) & 0xff
+   \   0000A1   8004         SJMP      ??zclSampleLight_LcdDisplayUpdate_11
+   \                     ??zclSampleLight_LcdDisplayUpdate_10:
+   \   0000A3                ; Setup parameters for call to function HalLcdWriteString
+   \   0000A3   7A..         MOV       R2,#sLightOff & 0xff
+   \   0000A5   7B..         MOV       R3,#(sLightOff >> 8) & 0xff
+   \                     ??zclSampleLight_LcdDisplayUpdate_11:
+   \   0000A7   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+    612          }
+   \                     ??zclSampleLight_LcdDisplayUpdate_9:
+   \   0000AA   80..         SJMP      ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    613          
+    614          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+    615          /*********************************************************************
+    616           * @fn      zclSampleLight_UpdateLampLevel
+    617           *
+    618           * @brief   Update lamp level output with gamma compensation
+    619           *
+    620           * @param   level
+    621           *
+    622           * @return  none
+    623           */
+    624          void zclSampleLight_UpdateLampLevel( uint8 level )
+    625          
+    626          {
+    627            uint16 gammaCorrectedLevel;
+    628          
+    629            // gamma correct the level
+    630            gammaCorrectedLevel = (uint16) ( pow( ( (float)level / LEVEL_MAX ), (float)GAMMA_VALUE ) * (float)LEVEL_MAX);
+    631          
+    632            halTimer1SetChannelDuty(WHITE_LED, (uint16)(((uint32)gammaCorrectedLevel*PWM_FULL_DUTY_CYCLE)/LEVEL_MAX) );
+    633          }
+    634          #endif
+    635          
+    636          /*********************************************************************
+    637           * @fn      zclSampleLight_DisplayLight
+    638           *
+    639           * @brief   Displays current state of light on LED and also on main display if supported.
+    640           *
+    641           * @param   none
+    642           *
+    643           * @return  none
+    644           */
+    645          static void zclSampleLight_DisplayLight( void )
+    646          {
+    647            // set the LED1 based on light (on or off)
+    648            if ( zclSampleLight_OnOff == LIGHT_ON )
+    649            {
+    650              HalLedSet ( HAL_LED_2, HAL_LED_MODE_ON );
+    651              HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );
+    652              osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_TURNOFF_UV_EVT, 60000 );    
+    653            }
+    654            else
+    655            {
+    656              HalLedSet ( HAL_LED_2, HAL_LED_MODE_OFF );
+    657              HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );
+    658              osal_stop_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_TURNOFF_UV_EVT ); 
+    659            }
+    660          
+    661          #ifdef LCD_SUPPORTED
+    662            if (giLightScreenMode == LIGHT_MAINMODE)
+    663            {
+    664          #ifdef ZCL_LEVEL_CTRL
+    665              // display current light level
+    666              if ( ( zclSampleLight_LevelCurrentLevel == ATTR_LEVEL_MIN_LEVEL ) &&
+    667                   ( zclSampleLight_OnOff == LIGHT_OFF ) )
+    668              {
+    669                HalLcdWriteString( (char *)sLightOff, HAL_LCD_LINE_2 );
+    670              }
+    671              else if ( ( zclSampleLight_LevelCurrentLevel >= ATTR_LEVEL_MAX_LEVEL ) ||
+    672                        ( zclSampleLight_LevelCurrentLevel == zclSampleLight_LevelOnLevel ) ||
+    673                         ( ( zclSampleLight_LevelOnLevel == ATTR_LEVEL_ON_LEVEL_NO_EFFECT ) &&
+    674                           ( zclSampleLight_LevelCurrentLevel == zclSampleLight_LevelLastLevel ) ) )
+    675              {
+    676                HalLcdWriteString( (char *)sLightOn, HAL_LCD_LINE_2 );
+    677              }
+    678              else    // "    LEVEL ###"
+    679              {
+    680                zclHA_uint8toa( zclSampleLight_LevelCurrentLevel, &sLightLevel[10] );
+    681                HalLcdWriteString( (char *)sLightLevel, HAL_LCD_LINE_2 );
+    682              }
+    683          #else
+    684              if ( zclSampleLight_OnOff )
+    685              {
+    686                HalLcdWriteString( (char *)sLightOn, HAL_LCD_LINE_2 );
+    687              }
+    688              else
+    689              {
+    690                HalLcdWriteString( (char *)sLightOff, HAL_LCD_LINE_2 );
+    691              }
+    692          #endif // ZCL_LEVEL_CTRL
+    693            }
+    694          #endif // LCD_SUPPORTED
+    695          }
+    696          
+    697          #ifdef LCD_SUPPORTED
+    698          /*********************************************************************
+    699           * @fn      zclSampleLight_LcdDisplayMainMode
+    700           *
+    701           * @brief   Called to display the main screen on the LCD.
+    702           *
+    703           * @param   none
+    704           *
+    705           * @return  none
+    706           */
+    707          static void zclSampleLight_LcdDisplayMainMode( void )
+    708          {
+    709            // display line 1 to indicate NWK status
+    710            if ( zclSampleLight_NwkState == DEV_ZB_COORD )
+    711            {
+    712              zclHA_LcdStatusLine1( ZCL_HA_STATUSLINE_ZC );
+    713            }
+    714            else if ( zclSampleLight_NwkState == DEV_ROUTER )
+    715            {
+    716              zclHA_LcdStatusLine1( ZCL_HA_STATUSLINE_ZR );
+    717            }
+    718            else if ( zclSampleLight_NwkState == DEV_END_DEVICE )
+    719            {
+    720              zclHA_LcdStatusLine1( ZCL_HA_STATUSLINE_ZED );
+    721            }
+    722          
+    723            // end of line 3 displays permit join status (*)
+    724            if ( gPermitDuration )
+    725            {
+    726              sSwHelp[15] = '*';
+    727            }
+    728            else
+    729            {
+    730              sSwHelp[15] = ' ';
+    731            }
+    732            HalLcdWriteString( (char *)sSwHelp, HAL_LCD_LINE_3 );
+    733          }
+    734          
+    735          /*********************************************************************
+    736           * @fn      zclSampleLight_LcdDisplayHelpMode
+    737           *
+    738           * @brief   Called to display the SW options on the LCD.
+    739           *
+    740           * @param   none
+    741           *
+    742           * @return  none
+    743           */
+    744          static void zclSampleLight_LcdDisplayHelpMode( void )
+    745          {
+    746            HalLcdWriteString( (char *)sSwLight, HAL_LCD_LINE_1 );
+    747            HalLcdWriteString( (char *)sSwEZMode, HAL_LCD_LINE_2 );
+    748            HalLcdWriteString( (char *)sSwHelp, HAL_LCD_LINE_3 );
+    749          }
+    750          #endif  // LCD_SUPPORTED
+    751          
+    752          /*********************************************************************
+    753           * @fn      zclSampleLight_ProcessIdentifyTimeChange
+    754           *
+    755           * @brief   Called to process any change to the IdentifyTime attribute.
+    756           *
+    757           * @param   none
+    758           *
+    759           * @return  none
+    760           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    761          static void zclSampleLight_ProcessIdentifyTimeChange( void )
+   \                     zclSampleLight_ProcessIdentifyTimeChange:
+    762          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    763            if ( zclSampleLight_IdentifyTime > 0 )
+   \   000004   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000007   E8           MOV       A,R0
+   \   000008   49           ORL       A,R1
+   \   000009   6010         JZ        ??zclSampleLight_ProcessIdentifyTimeChange_0
+    764            {
+    765              osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_IDENTIFY_TIMEOUT_EVT, 1000 );
+   \   00000B                ; Setup parameters for call to function osal_start_timerEx
+   \   00000B   90....       MOV       DPTR,#__Constant_3e8
+   \   00000E   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000011   7A01         MOV       R2,#0x1
+   \   000013   12....       LCALL     ?Subroutine2 & 0xFFFF
+    766          //    HalLedBlink ( HAL_LED_2, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+    767            }
+   \                     ??CrossCallReturnLabel_1:
+   \   000016   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000019   8018         SJMP      ??CrossCallReturnLabel_9
+    768            else
+    769            {
+    770          #ifdef ZCL_EZMODE
+    771              if ( zclSampleLight_IdentifyCommissionState & EZMODE_COMMISSION_OPERATIONAL )
+   \                     ??zclSampleLight_ProcessIdentifyTimeChange_0:
+   \   00001B   90....       MOV       DPTR,#zclSampleLight_IdentifyCommissionState
+   \   00001E   E0           MOVX      A,@DPTR
+   \   00001F   A2E1         MOV       C,0xE0 /* A   */.1
+   \   000021   5004         JNC       ??zclSampleLight_ProcessIdentifyTimeChange_1
+    772              {
+    773                HalLedSet ( HAL_LED_4, HAL_LED_MODE_ON );
+   \   000023                ; Setup parameters for call to function HalLedSet
+   \   000023   7A01         MOV       R2,#0x1
+   \   000025   8002         SJMP      ??zclSampleLight_ProcessIdentifyTimeChange_2
+    774              }
+    775              else
+    776              {
+    777                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \                     ??zclSampleLight_ProcessIdentifyTimeChange_1:
+   \   000027                ; Setup parameters for call to function HalLedSet
+   \   000027   7A00         MOV       R2,#0x0
+   \                     ??zclSampleLight_ProcessIdentifyTimeChange_2:
+   \   000029   7908         MOV       R1,#0x8
+   \   00002B   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    778              }
+    779          #endif
+    780          
+    781              osal_stop_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_IDENTIFY_TIMEOUT_EVT );
+   \   00002E                ; Setup parameters for call to function osal_stop_timerEx
+   \   00002E   7A01         MOV       R2,#0x1
+   \   000030   12....       LCALL     ??Subroutine7_0 & 0xFFFF
+    782            }
+    783          }
+   \                     ??CrossCallReturnLabel_9:
+   \   000033   80..         SJMP      ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7B00         MOV       R3,#0x0
+   \   000002   90....       MOV       DPTR,#zclSampleLight_TaskID
+   \   000005   E0           MOVX      A,@DPTR
+   \   000006   F9           MOV       R1,A
+   \   000007   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   00000A   7404         MOV       A,#0x4
+   \   00000C   22           RET
+    784          
+    785          /*********************************************************************
+    786           * @fn      zclSampleLight_BasicResetCB
+    787           *
+    788           * @brief   Callback from the ZCL General Cluster Library
+    789           *          to set all the Basic Cluster attributes to default values.
+    790           *
+    791           * @param   none
+    792           *
+    793           * @return  none
+    794           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine9_0
+   \   000003                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    795          static void zclSampleLight_BasicResetCB( void )
+   \                     zclSampleLight_BasicResetCB:
+    796          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 5
+   \   000004   74FB         MOV       A,#-0x5
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+    797            NLME_LeaveReq_t leaveReq;
+    798            // Set every field to 0
+    799            osal_memset( &leaveReq, 0, sizeof( NLME_LeaveReq_t ) );
+   \   000009                ; Setup parameters for call to function osal_memset
+   \   000009   7C05         MOV       R4,#0x5
+   \   00000B   7D00         MOV       R5,#0x0
+   \   00000D   7900         MOV       R1,#0x0
+   \   00000F   AA..         MOV       R2,?XSP + 0
+   \   000011   AB..         MOV       R3,?XSP + 1
+   \   000013   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+    800          
+    801            // This will enable the device to rejoin the network after reset.
+    802            leaveReq.rejoin = TRUE;
+   \   000016   7403         MOV       A,#0x3
+   \   000018   12....       LCALL     ?XSTACK_DISP0_8
+   \   00001B   7401         MOV       A,#0x1
+   \   00001D   F0           MOVX      @DPTR,A
+    803          
+    804            // Set the NV startup option to force a "new" join.
+    805            zgWriteStartupOptions( ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE );
+   \   00001E                ; Setup parameters for call to function zgWriteStartupOptions
+   \   00001E   7A02         MOV       R2,#0x2
+   \   000020   79FF         MOV       R1,#-0x1
+   \   000022   12....       LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
+    806          
+    807            // Leave the network, and reset afterwards
+    808            if ( NLME_LeaveReq( &leaveReq ) != ZSuccess )
+   \   000025                ; Setup parameters for call to function NLME_LeaveReq
+   \   000025   AA..         MOV       R2,?XSP + 0
+   \   000027   AB..         MOV       R3,?XSP + 1
+   \   000029   12....       LCALL     `??NLME_LeaveReq::?relay`; Banked call to: NLME_LeaveReq
+   \   00002C   E9           MOV       A,R1
+   \   00002D   6005         JZ        ??zclSampleLight_BasicResetCB_0
+    809            {
+    810              // Couldn't send out leave; prepare to reset anyway
+    811              ZDApp_LeaveReset( FALSE );
+   \   00002F                ; Setup parameters for call to function ZDApp_LeaveReset
+   \   00002F   7900         MOV       R1,#0x0
+   \   000031   12....       LCALL     `??ZDApp_LeaveReset::?relay`; Banked call to: ZDApp_LeaveReset
+    812            }
+    813          }
+   \                     ??zclSampleLight_BasicResetCB_0:
+   \   000034   7405         MOV       A,#0x5
+   \   000036   02....       LJMP      ?Subroutine1 & 0xFFFF
+    814          
+    815          /*********************************************************************
+    816           * @fn      zclSampleLight_IdentifyCB
+    817           *
+    818           * @brief   Callback from the ZCL General Cluster Library when
+    819           *          it received an Identity Command for this application.
+    820           *
+    821           * @param   srcAddr - source address and endpoint of the response message
+    822           * @param   identifyTime - the number of seconds to identify yourself
+    823           *
+    824           * @return  none
+    825           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    826          static void zclSampleLight_IdentifyCB( zclIdentify_t *pCmd )
+   \                     zclSampleLight_IdentifyCB:
+    827          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    828            zclSampleLight_IdentifyTime = pCmd->identifyTime;
+   \   000004   8A82         MOV       DPL,R2
+   \   000006   8B83         MOV       DPH,R3
+   \   000008   A3           INC       DPTR
+   \   000009   A3           INC       DPTR
+   \   00000A   12....       LCALL     ??Subroutine8_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00000D   90....       MOV       DPTR,#zclSampleLight_IdentifyTime
+   \   000010   E8           MOV       A,R0
+   \   000011   F0           MOVX      @DPTR,A
+   \   000012   A3           INC       DPTR
+   \   000013   E9           MOV       A,R1
+   \   000014   F0           MOVX      @DPTR,A
+    829            zclSampleLight_ProcessIdentifyTimeChange();
+   \   000015                ; Setup parameters for call to function zclSampleLight_ProcessIdentifyTimeChange
+   \   000015   12....       LCALL     `??zclSampleLight_ProcessIdentifyTimeChange::?re`; Banked call to: zclSampleLight_ProcessIdentifyTimeChange
+    830          }
+   \   000018   02....       LJMP      ??Subroutine9_0 & 0xFFFF
+    831          
+    832          /*********************************************************************
+    833           * @fn      zclSampleLight_IdentifyQueryRspCB
+    834           *
+    835           * @brief   Callback from the ZCL General Cluster Library when
+    836           *          it received an Identity Query Response Command for this application.
+    837           *
+    838           * @param   srcAddr - requestor's address
+    839           * @param   timeout - number of seconds to identify yourself (valid for query response)
+    840           *
+    841           * @return  none
+    842           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    843          static void zclSampleLight_IdentifyQueryRspCB(  zclIdentifyQueryRsp_t *pRsp )
+   \                     zclSampleLight_IdentifyQueryRspCB:
+    844          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 2
+   \   000004   74FE         MOV       A,#-0x2
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+    845            (void)pRsp;
+    846          #ifdef ZCL_EZMODE
+    847            {
+    848              zclEZMode_ActionData_t data;
+    849              data.pIdentifyQueryRsp = pRsp;
+   \   000009   12....       LCALL     ?Subroutine5 & 0xFFFF
+    850              zcl_EZModeAction ( EZMODE_ACTION_IDENTIFY_QUERY_RSP, &data );
+    851            }
+   \                     ??CrossCallReturnLabel_5:
+   \   00000C   7904         MOV       R1,#0x4
+   \   00000E   12....       LCALL     `??zcl_EZModeAction::?relay`; Banked call to: zcl_EZModeAction
+    852          #endif
+    853          }
+   \   000011   7402         MOV       A,#0x2
+   \   000013   02....       LJMP      ?Subroutine1 & 0xFFFF
+    854          
+    855          /*********************************************************************
+    856           * @fn      zclSampleLight_OnOffCB
+    857           *
+    858           * @brief   Callback from the ZCL General Cluster Library when
+    859           *          it received an On/Off Command for this application.
+    860           *
+    861           * @param   cmd - COMMAND_ON, COMMAND_OFF or COMMAND_TOGGLE
+    862           *
+    863           * @return  none
+    864           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    865          static void zclSampleLight_OnOffCB( uint8 cmd )
+   \                     zclSampleLight_OnOffCB:
+    866          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    867            afIncomingMSGPacket_t *pPtr = zcl_getRawAFMsg();
+   \   000007                ; Setup parameters for call to function zcl_getRawAFMsg
+   \   000007   12....       LCALL     `??zcl_getRawAFMsg::?relay`; Banked call to: zcl_getRawAFMsg
+   \   00000A   8A82         MOV       DPL,R2
+   \   00000C   8B83         MOV       DPH,R3
+    868          
+    869            zclSampleLight_DstAddr.addr.shortAddr = pPtr->srcAddr.addr.shortAddr;
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   12....       LCALL     ??Subroutine8_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000017   90....       MOV       DPTR,#zclSampleLight_DstAddr
+   \   00001A   E8           MOV       A,R0
+   \   00001B   F0           MOVX      @DPTR,A
+   \   00001C   A3           INC       DPTR
+   \   00001D   E9           MOV       A,R1
+   \   00001E   F0           MOVX      @DPTR,A
+    870          
+    871          
+    872            // Turn on the light
+    873            if (( cmd == COMMAND_ON )&&( !HAL_PUSH_BUTTON2() ))
+   \   00001F   7401         MOV       A,#0x1
+   \   000021   6E           XRL       A,R6
+   \   000022   7006         JNZ       ??zclSampleLight_OnOffCB_0
+   \   000024   A291         MOV       C,0x90.1
+   \   000026   4020         JC        ??zclSampleLight_OnOffCB_1
+   \   000028   800E         SJMP      ??zclSampleLight_OnOffCB_2
+    874            {
+    875              zclSampleLight_OnOff = LIGHT_ON;
+    876            }
+    877            // Turn off the light
+    878            else if ( cmd == COMMAND_OFF )
+   \                     ??zclSampleLight_OnOffCB_0:
+   \   00002A   EE           MOV       A,R6
+   \   00002B   6012         JZ        ??zclSampleLight_OnOffCB_3
+    879            {
+    880              zclSampleLight_OnOff = LIGHT_OFF;
+    881              UV_Auto_Turn_Off = 0;
+    882            }
+    883            // Toggle the light
+    884            else if ( cmd == COMMAND_TOGGLE )
+   \   00002D   7402         MOV       A,#0x2
+   \   00002F   6E           XRL       A,R6
+   \   000030   7016         JNZ       ??zclSampleLight_OnOffCB_1
+    885            {
+    886              if ( zclSampleLight_OnOff == LIGHT_OFF )
+   \   000032   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   000035   E0           MOVX      A,@DPTR
+   \   000036   7007         JNZ       ??zclSampleLight_OnOffCB_3
+    887              {
+    888                zclSampleLight_OnOff = LIGHT_ON;
+   \                     ??zclSampleLight_OnOffCB_2:
+   \   000038   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   00003B   7401         MOV       A,#0x1
+   \   00003D   8008         SJMP      ??zclSampleLight_OnOffCB_4
+    889              }
+    890              else
+    891              {
+    892                zclSampleLight_OnOff = LIGHT_OFF;
+   \                     ??zclSampleLight_OnOffCB_3:
+   \   00003F   90....       MOV       DPTR,#zclSampleLight_OnOff
+   \   000042   E4           CLR       A
+   \   000043   F0           MOVX      @DPTR,A
+    893                UV_Auto_Turn_Off = 0;
+   \   000044   90....       MOV       DPTR,#UV_Auto_Turn_Off
+   \                     ??zclSampleLight_OnOffCB_4:
+   \   000047   F0           MOVX      @DPTR,A
+    894              }
+    895            }
+    896          
+    897          #if ZCL_LEVEL_CTRL
+    898            zclSampleLight_DefaultMove( );
+    899          #endif
+    900          
+    901            // update the display
+    902            zclSampleLight_LcdDisplayUpdate( );
+   \                     ??zclSampleLight_OnOffCB_1:
+   \   000048                ; Setup parameters for call to function zclSampleLight_LcdDisplayUpdate
+   \   000048   12....       LCALL     `??zclSampleLight_LcdDisplayUpdate::?relay`; Banked call to: zclSampleLight_LcdDisplayUpdate
+    903          }
+   \   00004B   7F02         MOV       R7,#0x2
+   \   00004D   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000050                REQUIRE _A_P1
+    904          
+    905          #ifdef ZCL_LEVEL_CTRL
+    906          /*********************************************************************
+    907           * @fn      zclSampleLight_TimeRateHelper
+    908           *
+    909           * @brief   Calculate time based on rate, and startup level state machine
+    910           *
+    911           * @param   newLevel - new level for current level
+    912           *
+    913           * @return  diff (directly), zclSampleLight_CurrentLevel32 and zclSampleLight_NewLevel, zclSampleLight_NewLevelUp
+    914           */
+    915          static uint32 zclSampleLight_TimeRateHelper( uint8 newLevel )
+    916          {
+    917            uint32 diff;
+    918            uint32 newLevel32;
+    919          
+    920            // remember current and new level
+    921            zclSampleLight_NewLevel = newLevel;
+    922            zclSampleLight_CurrentLevel32 = (uint32)1000 * zclSampleLight_LevelCurrentLevel;
+    923          
+    924            // calculate diff
+    925            newLevel32 = (uint32)1000 * newLevel;
+    926            if ( zclSampleLight_LevelCurrentLevel > newLevel )
+    927            {
+    928              diff = zclSampleLight_CurrentLevel32 - newLevel32;
+    929              zclSampleLight_NewLevelUp = FALSE;  // moving down
+    930            }
+    931            else
+    932            {
+    933              diff = newLevel32 - zclSampleLight_CurrentLevel32;
+    934              zclSampleLight_NewLevelUp = TRUE;   // moving up
+    935            }
+    936          
+    937            return ( diff );
+    938          }
+    939          
+    940          /*********************************************************************
+    941           * @fn      zclSampleLight_MoveBasedOnRate
+    942           *
+    943           * @brief   Calculate time based on rate, and startup level state machine
+    944           *
+    945           * @param   newLevel - new level for current level
+    946           * @param   rate16   - fixed point rate (e.g. 16.123)
+    947           *
+    948           * @return  none
+    949           */
+    950          static void zclSampleLight_MoveBasedOnRate( uint8 newLevel, uint32 rate )
+    951          {
+    952            uint32 diff;
+    953          
+    954            // determine how much time (in 10ths of seconds) based on the difference and rate
+    955            zclSampleLight_Rate32 = rate;
+    956            diff = zclSampleLight_TimeRateHelper( newLevel );
+    957            zclSampleLight_LevelRemainingTime = diff / rate;
+    958            if ( !zclSampleLight_LevelRemainingTime )
+    959            {
+    960              zclSampleLight_LevelRemainingTime = 1;
+    961            }
+    962          
+    963            osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_LEVEL_CTRL_EVT, 100 );
+    964          }
+    965          
+    966          /*********************************************************************
+    967           * @fn      zclSampleLight_MoveBasedOnTime
+    968           *
+    969           * @brief   Calculate rate based on time, and startup level state machine
+    970           *
+    971           * @param   newLevel  - new level for current level
+    972           * @param   time      - in 10ths of seconds
+    973           *
+    974           * @return  none
+    975           */
+    976          static void zclSampleLight_MoveBasedOnTime( uint8 newLevel, uint16 time )
+    977          {
+    978            uint16 diff;
+    979          
+    980            // determine rate (in units) based on difference and time
+    981            diff = zclSampleLight_TimeRateHelper( newLevel );
+    982            zclSampleLight_LevelRemainingTime = zclSampleLight_GetTime( newLevel, time );
+    983            zclSampleLight_Rate32 = diff / time;
+    984          
+    985            osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_LEVEL_CTRL_EVT, 100 );
+    986          }
+    987          
+    988          /*********************************************************************
+    989           * @fn      zclSampleLight_GetTime
+    990           *
+    991           * @brief   Determine amount of time that MoveXXX will take to complete.
+    992           *
+    993           * @param   level = new level to move to
+    994           *          time  = 0xffff=default, or 0x0000-n amount of time in tenths of seconds.
+    995           *
+    996           * @return  none
+    997           */
+    998          static uint16 zclSampleLight_GetTime( uint8 level, uint16 time )
+    999          {
+   1000            // there is a hiearchy of the amount of time to use for transistioning
+   1001            // check each one in turn. If none of defaults are set, then use fastest
+   1002            // time possible.
+   1003            if ( time == 0xFFFF )
+   1004            {
+   1005              // use On or Off Transition Time if set (not 0xffff)
+   1006              if ( zclSampleLight_OnOff == LIGHT_ON )
+   1007              {
+   1008                time = zclSampleLight_LevelOffTransitionTime;
+   1009              }
+   1010              else
+   1011              {
+   1012                time = zclSampleLight_LevelOnTransitionTime;
+   1013              }
+   1014          
+   1015              // else use OnOffTransitionTime if set (not 0xffff)
+   1016              if ( time == 0xFFFF )
+   1017              {
+   1018                time = zclSampleLight_LevelOnOffTransitionTime;
+   1019              }
+   1020          
+   1021              // else as fast as possible
+   1022              if ( time == 0xFFFF )
+   1023              {
+   1024                time = 1;
+   1025              }
+   1026            }
+   1027          
+   1028            if ( !time )
+   1029            {
+   1030              time = 1; // as fast as possible
+   1031            }
+   1032          
+   1033            return ( time );
+   1034          }
+   1035          
+   1036          /*********************************************************************
+   1037           * @fn      zclSampleLight_DefaultMove
+   1038           *
+   1039           * @brief   We were turned on/off. Use default time to move to on or off.
+   1040           *
+   1041           * @param   zclSampleLight_OnOff - must be set prior to calling this function.
+   1042           *
+   1043           * @return  none
+   1044           */
+   1045          static void zclSampleLight_DefaultMove( void )
+   1046          {
+   1047            uint8  newLevel;
+   1048            uint32 rate;      // fixed point decimal (3 places, eg. 16.345)
+   1049            uint16 time;
+   1050          
+   1051            // if moving to on position, move to on level
+   1052            if ( zclSampleLight_OnOff )
+   1053            {
+   1054              if ( zclSampleLight_LevelOnLevel == ATTR_LEVEL_ON_LEVEL_NO_EFFECT )
+   1055              {
+   1056                // The last Level (before going OFF) should be used)
+   1057                newLevel = zclSampleLight_LevelLastLevel;
+   1058              }
+   1059              else
+   1060              {
+   1061                newLevel = zclSampleLight_LevelOnLevel;
+   1062              }
+   1063          
+   1064              time = zclSampleLight_LevelOnTransitionTime;
+   1065            }
+   1066            else
+   1067            {
+   1068              newLevel = ATTR_LEVEL_MIN_LEVEL;
+   1069          
+   1070              if ( zclSampleLight_LevelOnLevel == ATTR_LEVEL_ON_LEVEL_NO_EFFECT )
+   1071              {
+   1072                // Save the current Level before going OFF to use it when the light turns ON
+   1073                // it should be back to this level
+   1074                zclSampleLight_LevelLastLevel = zclSampleLight_LevelCurrentLevel;
+   1075              }
+   1076          
+   1077              time = zclSampleLight_LevelOffTransitionTime;
+   1078            }
+   1079          
+   1080            // else use OnOffTransitionTime if set (not 0xffff)
+   1081            if ( time == 0xFFFF )
+   1082            {
+   1083              time = zclSampleLight_LevelOnOffTransitionTime;
+   1084            }
+   1085          
+   1086            // else as fast as possible
+   1087            if ( time == 0xFFFF )
+   1088            {
+   1089              time = 1;
+   1090            }
+   1091          
+   1092            // calculate rate based on time (int 10ths) for full transition (1-254)
+   1093            rate = 255000 / time;    // units per tick, fixed point, 3 decimal places (e.g. 8500 = 8.5 units per tick)
+   1094          
+   1095            // start up state machine.
+   1096            zclSampleLight_WithOnOff = TRUE;
+   1097            zclSampleLight_MoveBasedOnRate( newLevel, rate );
+   1098          }
+   1099          
+   1100          /*********************************************************************
+   1101           * @fn      zclSampleLight_AdjustLightLevel
+   1102           *
+   1103           * @brief   Called each 10th of a second while state machine running
+   1104           *
+   1105           * @param   none
+   1106           *
+   1107           * @return  none
+   1108           */
+   1109          static void zclSampleLight_AdjustLightLevel( void )
+   1110          {
+   1111            // one tick (10th of a second) less
+   1112            if ( zclSampleLight_LevelRemainingTime )
+   1113            {
+   1114              --zclSampleLight_LevelRemainingTime;
+   1115            }
+   1116          
+   1117            // no time left, done
+   1118            if ( zclSampleLight_LevelRemainingTime == 0)
+   1119            {
+   1120              zclSampleLight_LevelCurrentLevel = zclSampleLight_NewLevel;
+   1121            }
+   1122          
+   1123            // still time left, keep increment/decrementing
+   1124            else
+   1125            {
+   1126              if ( zclSampleLight_NewLevelUp )
+   1127              {
+   1128                zclSampleLight_CurrentLevel32 += zclSampleLight_Rate32;
+   1129              }
+   1130              else
+   1131              {
+   1132                zclSampleLight_CurrentLevel32 -= zclSampleLight_Rate32;
+   1133              }
+   1134              zclSampleLight_LevelCurrentLevel = (uint8)( zclSampleLight_CurrentLevel32 / 1000 );
+   1135            }
+   1136          
+   1137          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+   1138            zclSampleLight_UpdateLampLevel(zclSampleLight_LevelCurrentLevel);
+   1139          #endif
+   1140          
+   1141            // also affect on/off
+   1142            if ( zclSampleLight_WithOnOff )
+   1143            {
+   1144              if ( zclSampleLight_LevelCurrentLevel > ATTR_LEVEL_MIN_LEVEL )
+   1145              {
+   1146                zclSampleLight_OnOff = LIGHT_ON;
+   1147          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+   1148                ENABLE_LAMP;
+   1149          #endif
+   1150              }
+   1151              else
+   1152              {
+   1153                zclSampleLight_OnOff = LIGHT_OFF;
+   1154          #if (defined HAL_BOARD_ZLIGHT) || (defined HAL_PWM)
+   1155                DISABLE_LAMP;
+   1156          #endif
+   1157              }
+   1158            }
+   1159          
+   1160            // display light level as we go
+   1161            zclSampleLight_DisplayLight( );
+   1162          
+   1163            // keep ticking away
+   1164            if ( zclSampleLight_LevelRemainingTime )
+   1165            {
+   1166              osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_LEVEL_CTRL_EVT, 100 );
+   1167            }
+   1168          }
+   1169          
+   1170          /*********************************************************************
+   1171           * @fn      zclSampleLight_LevelControlMoveToLevelCB
+   1172           *
+   1173           * @brief   Callback from the ZCL General Cluster Library when
+   1174           *          it received a LevelControlMoveToLevel Command for this application.
+   1175           *
+   1176           * @param   pCmd - ZigBee command parameters
+   1177           *
+   1178           * @return  none
+   1179           */
+   1180          static void zclSampleLight_LevelControlMoveToLevelCB( zclLCMoveToLevel_t *pCmd )
+   1181          {
+   1182            zclSampleLight_WithOnOff = pCmd->withOnOff;
+   1183            zclSampleLight_MoveBasedOnTime( pCmd->level, pCmd->transitionTime );
+   1184          }
+   1185          
+   1186          /*********************************************************************
+   1187           * @fn      zclSampleLight_LevelControlMoveCB
+   1188           *
+   1189           * @brief   Callback from the ZCL General Cluster Library when
+   1190           *          it received a LevelControlMove Command for this application.
+   1191           *
+   1192           * @param   pCmd - ZigBee command parameters
+   1193           *
+   1194           * @return  none
+   1195           */
+   1196          static void zclSampleLight_LevelControlMoveCB( zclLCMove_t *pCmd )
+   1197          {
+   1198            uint8 newLevel;
+   1199            uint32 rate;
+   1200          
+   1201            // convert rate from units per second to units per tick (10ths of seconds)
+   1202            // and move at that right up or down
+   1203            zclSampleLight_WithOnOff = pCmd->withOnOff;
+   1204          
+   1205            if ( pCmd->moveMode == LEVEL_MOVE_UP )
+   1206            {
+   1207              newLevel = ATTR_LEVEL_MAX_LEVEL;  // fully on
+   1208            }
+   1209            else
+   1210            {
+   1211              newLevel = ATTR_LEVEL_MIN_LEVEL; // fully off
+   1212            }
+   1213          
+   1214            rate = (uint32)100 * pCmd->rate;
+   1215            zclSampleLight_MoveBasedOnRate( newLevel, rate );
+   1216          }
+   1217          
+   1218          /*********************************************************************
+   1219           * @fn      zclSampleLight_LevelControlStepCB
+   1220           *
+   1221           * @brief   Callback from the ZCL General Cluster Library when
+   1222           *          it received an On/Off Command for this application.
+   1223           *
+   1224           * @param   pCmd - ZigBee command parameters
+   1225           *
+   1226           * @return  none
+   1227           */
+   1228          static void zclSampleLight_LevelControlStepCB( zclLCStep_t *pCmd )
+   1229          {
+   1230            uint8 newLevel;
+   1231          
+   1232            // determine new level, but don't exceed boundaries
+   1233            if ( pCmd->stepMode == LEVEL_MOVE_UP )
+   1234            {
+   1235              if ( (uint16)zclSampleLight_LevelCurrentLevel + pCmd->amount > ATTR_LEVEL_MAX_LEVEL )
+   1236              {
+   1237                newLevel = ATTR_LEVEL_MAX_LEVEL;
+   1238              }
+   1239              else
+   1240              {
+   1241                newLevel = zclSampleLight_LevelCurrentLevel + pCmd->amount;
+   1242              }
+   1243            }
+   1244            else
+   1245            {
+   1246              if ( pCmd->amount >= zclSampleLight_LevelCurrentLevel )
+   1247              {
+   1248                newLevel = ATTR_LEVEL_MIN_LEVEL;
+   1249              }
+   1250              else
+   1251              {
+   1252                newLevel = zclSampleLight_LevelCurrentLevel - pCmd->amount;
+   1253              }
+   1254            }
+   1255          
+   1256            // move to the new level
+   1257            zclSampleLight_WithOnOff = pCmd->withOnOff;
+   1258            zclSampleLight_MoveBasedOnTime( newLevel, pCmd->transitionTime );
+   1259          }
+   1260          
+   1261          /*********************************************************************
+   1262           * @fn      zclSampleLight_LevelControlStopCB
+   1263           *
+   1264           * @brief   Callback from the ZCL General Cluster Library when
+   1265           *          it received an Level Control Stop Command for this application.
+   1266           *
+   1267           * @param   pCmd - ZigBee command parameters
+   1268           *
+   1269           * @return  none
+   1270           */
+   1271          static void zclSampleLight_LevelControlStopCB( void )
+   1272          {
+   1273            // stop immediately
+   1274            osal_stop_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_LEVEL_CTRL_EVT );
+   1275            zclSampleLight_LevelRemainingTime = 0;
+   1276          }
+   1277          #endif
+   1278          
+   1279          /******************************************************************************
+   1280           *
+   1281           *  Functions for processing ZCL Foundation incoming Command/Response messages
+   1282           *
+   1283           *****************************************************************************/
+   1284          
+   1285          /*********************************************************************
+   1286           * @fn      zclSampleLight_ProcessIncomingMsg
+   1287           *
+   1288           * @brief   Process ZCL Foundation incoming message
+   1289           *
+   1290           * @param   pInMsg - pointer to the received message
+   1291           *
+   1292           * @return  none
+   1293           */
+   1294          static void zclSampleLight_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
+   1295          {
+   1296            switch ( pInMsg->zclHdr.commandID )
+   1297            {
+   1298          #ifdef ZCL_READ
+   1299              case ZCL_CMD_READ_RSP:
+   1300                zclSampleLight_ProcessInReadRspCmd( pInMsg );
+   1301                break;
+   1302          #endif
+   1303          #ifdef ZCL_WRITE
+   1304              case ZCL_CMD_WRITE_RSP:
+   1305                zclSampleLight_ProcessInWriteRspCmd( pInMsg );
+   1306                break;
+   1307          #endif
+   1308          #ifdef ZCL_REPORT
+   1309              // Attribute Reporting implementation should be added here
+   1310              case ZCL_CMD_CONFIG_REPORT:
+   1311                // zclSampleLight_ProcessInConfigReportCmd( pInMsg );
+   1312                break;
+   1313          
+   1314              case ZCL_CMD_CONFIG_REPORT_RSP:
+   1315                // zclSampleLight_ProcessInConfigReportRspCmd( pInMsg );
+   1316                break;
+   1317          
+   1318              case ZCL_CMD_READ_REPORT_CFG:
+   1319                // zclSampleLight_ProcessInReadReportCfgCmd( pInMsg );
+   1320                break;
+   1321          
+   1322              case ZCL_CMD_READ_REPORT_CFG_RSP:
+   1323                // zclSampleLight_ProcessInReadReportCfgRspCmd( pInMsg );
+   1324                break;
+   1325          
+   1326              case ZCL_CMD_REPORT:
+   1327                // zclSampleLight_ProcessInReportCmd( pInMsg );
+   1328                break;
+   1329          #endif
+   1330              case ZCL_CMD_DEFAULT_RSP:
+   1331                zclSampleLight_ProcessInDefaultRspCmd( pInMsg );
+   1332                break;
+   1333          #ifdef ZCL_DISCOVER
+   1334              case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+   1335                zclSampleLight_ProcessInDiscCmdsRspCmd( pInMsg );
+   1336                break;
+   1337          
+   1338              case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+   1339                zclSampleLight_ProcessInDiscCmdsRspCmd( pInMsg );
+   1340                break;
+   1341          
+   1342              case ZCL_CMD_DISCOVER_ATTRS_RSP:
+   1343                zclSampleLight_ProcessInDiscAttrsRspCmd( pInMsg );
+   1344                break;
+   1345          
+   1346              case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+   1347                zclSampleLight_ProcessInDiscAttrsExtRspCmd( pInMsg );
+   1348                break;
+   1349          #endif
+   1350              default:
+   1351                break;
+   1352            }
+   1353          
+   1354            if ( pInMsg->attrCmd )
+   1355              osal_mem_free( pInMsg->attrCmd );
+   1356          }
+   1357          
+   1358          #ifdef ZCL_READ
+   1359          /*********************************************************************
+   1360           * @fn      zclSampleLight_ProcessInReadRspCmd
+   1361           *
+   1362           * @brief   Process the "Profile" Read Response Command
+   1363           *
+   1364           * @param   pInMsg - incoming message to process
+   1365           *
+   1366           * @return  none
+   1367           */
+   1368          static uint8 zclSampleLight_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+   1369          {
+   1370            zclReadRspCmd_t *readRspCmd;
+   1371            uint8 i;
+   1372          
+   1373            readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+   1374            for (i = 0; i < readRspCmd->numAttr; i++)
+   1375            {
+   1376              // Notify the originator of the results of the original read attributes
+   1377              // attempt and, for each successfull request, the value of the requested
+   1378              // attribute
+   1379            }
+   1380          
+   1381            return ( TRUE );
+   1382          }
+   1383          #endif // ZCL_READ
+   1384          
+   1385          #ifdef ZCL_WRITE
+   1386          /*********************************************************************
+   1387           * @fn      zclSampleLight_ProcessInWriteRspCmd
+   1388           *
+   1389           * @brief   Process the "Profile" Write Response Command
+   1390           *
+   1391           * @param   pInMsg - incoming message to process
+   1392           *
+   1393           * @return  none
+   1394           */
+   1395          static uint8 zclSampleLight_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+   1396          {
+   1397            zclWriteRspCmd_t *writeRspCmd;
+   1398            uint8 i;
+   1399          
+   1400            writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+   1401            for ( i = 0; i < writeRspCmd->numAttr; i++ )
+   1402            {
+   1403              // Notify the device of the results of the its original write attributes
+   1404              // command.
+   1405            }
+   1406          
+   1407            return ( TRUE );
+   1408          }
+   1409          #endif // ZCL_WRITE
+   1410          
+   1411          /*********************************************************************
+   1412           * @fn      zclSampleLight_ProcessInDefaultRspCmd
+   1413           *
+   1414           * @brief   Process the "Profile" Default Response Command
+   1415           *
+   1416           * @param   pInMsg - incoming message to process
+   1417           *
+   1418           * @return  none
+   1419           */
+   1420          static uint8 zclSampleLight_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+   1421          {
+   1422            // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+   1423          
+   1424            // Device is notified of the Default Response command.
+   1425            (void)pInMsg;
+   1426          
+   1427            return ( TRUE );
+   1428          }
+   1429          
+   1430          #ifdef ZCL_DISCOVER
+   1431          /*********************************************************************
+   1432           * @fn      zclSampleLight_ProcessInDiscCmdsRspCmd
+   1433           *
+   1434           * @brief   Process the Discover Commands Response Command
+   1435           *
+   1436           * @param   pInMsg - incoming message to process
+   1437           *
+   1438           * @return  none
+   1439           */
+   1440          static uint8 zclSampleLight_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+   1441          {
+   1442            zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+   1443            uint8 i;
+   1444          
+   1445            discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+   1446            for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+   1447            {
+   1448              // Device is notified of the result of its attribute discovery command.
+   1449            }
+   1450          
+   1451            return ( TRUE );
+   1452          }
+   1453          
+   1454          /*********************************************************************
+   1455           * @fn      zclSampleLight_ProcessInDiscAttrsRspCmd
+   1456           *
+   1457           * @brief   Process the "Profile" Discover Attributes Response Command
+   1458           *
+   1459           * @param   pInMsg - incoming message to process
+   1460           *
+   1461           * @return  none
+   1462           */
+   1463          static uint8 zclSampleLight_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+   1464          {
+   1465            zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+   1466            uint8 i;
+   1467          
+   1468            discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+   1469            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+   1470            {
+   1471              // Device is notified of the result of its attribute discovery command.
+   1472            }
+   1473          
+   1474            return ( TRUE );
+   1475          }
+   1476          
+   1477          /*********************************************************************
+   1478           * @fn      zclSampleLight_ProcessInDiscAttrsExtRspCmd
+   1479           *
+   1480           * @brief   Process the "Profile" Discover Attributes Extended Response Command
+   1481           *
+   1482           * @param   pInMsg - incoming message to process
+   1483           *
+   1484           * @return  none
+   1485           */
+   1486          static uint8 zclSampleLight_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+   1487          {
+   1488            zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+   1489            uint8 i;
+   1490          
+   1491            discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+   1492            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+   1493            {
+   1494              // Device is notified of the result of its attribute discovery command.
+   1495            }
+   1496          
+   1497            return ( TRUE );
+   1498          }
+   1499          #endif // ZCL_DISCOVER
+   1500          
+   1501          #if ZCL_EZMODE
+   1502          /*********************************************************************
+   1503           * @fn      zclSampleLight_ProcessZDOMsgs
+   1504           *
+   1505           * @brief   Called when this node receives a ZDO/ZDP response.
+   1506           *
+   1507           * @param   none
+   1508           *
+   1509           * @return  status
+   1510           */
+   1511          static void zclSampleLight_ProcessZDOMsgs( zdoIncomingMsg_t *pMsg )
+   1512          {
+   1513            zclEZMode_ActionData_t data;
+   1514            ZDO_MatchDescRsp_t *pMatchDescRsp;
+   1515          
+   1516            // Let EZ-Mode know of the Simple Descriptor Response
+   1517            if ( pMsg->clusterID == Match_Desc_rsp )
+   1518            {
+   1519              pMatchDescRsp = ZDO_ParseEPListRsp( pMsg );
+   1520              data.pMatchDescRsp = pMatchDescRsp;
+   1521              zcl_EZModeAction( EZMODE_ACTION_MATCH_DESC_RSP, &data );
+   1522              osal_mem_free( pMatchDescRsp );
+   1523            }
+   1524          }
+   1525          
+   1526          /*********************************************************************
+   1527           * @fn      zclSampleLight_EZModeCB
+   1528           *
+   1529           * @brief   The Application is informed of events. This can be used to show on the UI what is
+   1530          *           going on during EZ-Mode steering/finding/binding.
+   1531           *
+   1532           * @param   state - an
+   1533           *
+   1534           * @return  none
+   1535           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1536          static void zclSampleLight_EZModeCB( zlcEZMode_State_t state, zclEZMode_CBData_t *pData )
+   \                     zclSampleLight_EZModeCB:
+   1537          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+   1538          #ifdef LCD_SUPPORTED
+   1539            char *pStr;
+   1540            uint8 err;
+   1541          #endif
+   1542          
+   1543            // time to go into identify mode
+   1544            if ( state == EZMODE_STATE_IDENTIFYING )
+   \   000009   7404         MOV       A,#0x4
+   \   00000B   69           XRL       A,R1
+   \   00000C   7018         JNZ       ??zclSampleLight_EZModeCB_0
+   1545            {
+   1546          #ifdef LCD_SUPPORTED
+   1547              HalLcdWriteString( "EZMode", HAL_LCD_LINE_2 );
+   \   00000E                ; Setup parameters for call to function HalLcdWriteString
+   \   00000E   7902         MOV       R1,#0x2
+   \   000010   7A..         MOV       R2,#`?<Constant "EZMode">` & 0xff
+   \   000012   7B..         MOV       R3,#(`?<Constant "EZMode">` >> 8) & 0xff
+   \   000014   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+   1548          #endif
+   1549          
+   1550              zclSampleLight_IdentifyTime = ( EZMODE_TIME / 1000 );  // convert to seconds
+   \   000017   90....       MOV       DPTR,#zclSampleLight_IdentifyTime
+   \   00001A   74B4         MOV       A,#-0x4c
+   \   00001C   F0           MOVX      @DPTR,A
+   \   00001D   A3           INC       DPTR
+   \   00001E   E4           CLR       A
+   \   00001F   F0           MOVX      @DPTR,A
+   1551              zclSampleLight_ProcessIdentifyTimeChange();
+   \   000020                ; Setup parameters for call to function zclSampleLight_ProcessIdentifyTimeChange
+   \   000020   12....       LCALL     `??zclSampleLight_ProcessIdentifyTimeChange::?re`; Banked call to: zclSampleLight_ProcessIdentifyTimeChange
+   \   000023   02....       LJMP      ??zclSampleLight_EZModeCB_1 & 0xFFFF
+   1552            }
+   1553          
+   1554            // autoclosing, show what happened (success, cancelled, etc...)
+   1555            if( state == EZMODE_STATE_AUTOCLOSE )
+   \                     ??zclSampleLight_EZModeCB_0:
+   \   000026   7407         MOV       A,#0x7
+   \   000028   69           XRL       A,R1
+   \   000029   7028         JNZ       ??zclSampleLight_EZModeCB_2
+   1556            {
+   1557          #ifdef LCD_SUPPORTED
+   1558              pStr = NULL;
+   1559              err = pData->sAutoClose.err;
+   \   00002B   8A82         MOV       DPL,R2
+   \   00002D   8B83         MOV       DPH,R3
+   \   00002F   E0           MOVX      A,@DPTR
+   \   000030   F8           MOV       R0,A
+   1560              if ( err == EZMODE_ERR_SUCCESS )
+   \   000031   7006         JNZ       ??zclSampleLight_EZModeCB_3
+   1561              {
+   1562                pStr = "EZMode: Success";
+   \   000033   7A..         MOV       R2,#`?<Constant "EZMode: Success">` & 0xff
+   \   000035   7B..         MOV       R3,#(`?<Constant "EZMode: Success">` >> 8) & 0xff
+   \   000037   8009         SJMP      ??zclSampleLight_EZModeCB_4
+   1563              }
+   1564              else if ( err == EZMODE_ERR_NOMATCH )
+   \                     ??zclSampleLight_EZModeCB_3:
+   \   000039   7404         MOV       A,#0x4
+   \   00003B   68           XRL       A,R0
+   \   00003C   7068         JNZ       ??zclSampleLight_EZModeCB_1
+   1565              {
+   1566                pStr = "EZMode: NoMatch"; // not a match made in heaven
+   \   00003E   7A..         MOV       R2,#`?<Constant "EZMode: NoMatch">` & 0xff
+   \   000040   7B..         MOV       R3,#(`?<Constant "EZMode: NoMatch">` >> 8) & 0xff
+   1567              }
+   1568              if ( pStr )
+   \                     ??zclSampleLight_EZModeCB_4:
+   \   000042   EA           MOV       A,R2
+   \   000043   4B           ORL       A,R3
+   \   000044   6060         JZ        ??zclSampleLight_EZModeCB_1
+   1569              {
+   1570                if ( giLightScreenMode == LIGHT_MAINMODE )
+   \   000046   90....       MOV       DPTR,#giLightScreenMode
+   \   000049   E0           MOVX      A,@DPTR
+   \   00004A   705A         JNZ       ??zclSampleLight_EZModeCB_1
+   1571                {
+   1572                  HalLcdWriteString ( pStr, HAL_LCD_LINE_2 );
+   \   00004C                ; Setup parameters for call to function HalLcdWriteString
+   \   00004C   7902         MOV       R1,#0x2
+   \   00004E   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+   \   000051   8053         SJMP      ??zclSampleLight_EZModeCB_1
+   1573                }
+   1574              }
+   1575          #endif
+   1576            }
+   1577          
+   1578            // finished, either show DstAddr/EP, or nothing (depending on success or not)
+   1579            if( state == EZMODE_STATE_FINISH )
+   \                     ??zclSampleLight_EZModeCB_2:
+   \   000053   7463         MOV       A,#0x63
+   \   000055   69           XRL       A,R1
+   \   000056   704E         JNZ       ??zclSampleLight_EZModeCB_1
+   1580            {
+   1581              // turn off identify mode
+   1582              zclSampleLight_IdentifyTime = 0;
+   \   000058   90....       MOV       DPTR,#zclSampleLight_IdentifyTime
+   \   00005B   E4           CLR       A
+   \   00005C   F0           MOVX      @DPTR,A
+   \   00005D   A3           INC       DPTR
+   \   00005E   F0           MOVX      @DPTR,A
+   1583              zclSampleLight_ProcessIdentifyTimeChange();
+   \   00005F                ; Setup parameters for call to function zclSampleLight_ProcessIdentifyTimeChange
+   \   00005F   12....       LCALL     `??zclSampleLight_ProcessIdentifyTimeChange::?re`; Banked call to: zclSampleLight_ProcessIdentifyTimeChange
+   1584          
+   1585          #ifdef LCD_SUPPORTED
+   1586              // if successful, inform user which nwkaddr/ep we bound to
+   1587              pStr = NULL;
+   1588              err = pData->sFinish.err;
+   \   000062   8E82         MOV       DPL,R6
+   \   000064   8F83         MOV       DPH,R7
+   \   000066   E0           MOVX      A,@DPTR
+   \   000067   F8           MOV       R0,A
+   1589              if( err == EZMODE_ERR_SUCCESS )
+   \   000068   602E         JZ        ??zclSampleLight_EZModeCB_5
+   1590              {
+   1591                // already stated on autoclose
+   1592              }
+   1593              else if ( err == EZMODE_ERR_CANCELLED )
+   \   00006A   7402         MOV       A,#0x2
+   \   00006C   68           XRL       A,R0
+   \   00006D   7006         JNZ       ??zclSampleLight_EZModeCB_6
+   1594              {
+   1595                pStr = "EZMode: Cancel";
+   \   00006F   7A..         MOV       R2,#`?<Constant "EZMode: Cancel">` & 0xff
+   \   000071   7B..         MOV       R3,#(`?<Constant "EZMode: Cancel">` >> 8) & 0xff
+   \   000073   8014         SJMP      ??zclSampleLight_EZModeCB_7
+   1596              }
+   1597              else if ( err == EZMODE_ERR_BAD_PARAMETER )
+   \                     ??zclSampleLight_EZModeCB_6:
+   \   000075   7401         MOV       A,#0x1
+   \   000077   68           XRL       A,R0
+   \   000078   7006         JNZ       ??zclSampleLight_EZModeCB_8
+   1598              {
+   1599                pStr = "EZMode: BadParm";
+   \   00007A   7A..         MOV       R2,#`?<Constant "EZMode: BadParm">` & 0xff
+   \   00007C   7B..         MOV       R3,#(`?<Constant "EZMode: BadParm">` >> 8) & 0xff
+   \   00007E   8009         SJMP      ??zclSampleLight_EZModeCB_7
+   1600              }
+   1601              else if ( err == EZMODE_ERR_TIMEDOUT )
+   \                     ??zclSampleLight_EZModeCB_8:
+   \   000080   7403         MOV       A,#0x3
+   \   000082   68           XRL       A,R0
+   \   000083   7013         JNZ       ??zclSampleLight_EZModeCB_5
+   1602              {
+   1603                pStr = "EZMode: TimeOut";
+   \   000085   7A..         MOV       R2,#`?<Constant "EZMode: TimeOut">` & 0xff
+   \   000087   7B..         MOV       R3,#(`?<Constant "EZMode: TimeOut">` >> 8) & 0xff
+   1604              }
+   1605              if ( pStr )
+   \                     ??zclSampleLight_EZModeCB_7:
+   \   000089   EA           MOV       A,R2
+   \   00008A   4B           ORL       A,R3
+   \   00008B   600B         JZ        ??zclSampleLight_EZModeCB_5
+   1606              {
+   1607                if ( giLightScreenMode == LIGHT_MAINMODE )
+   \   00008D   90....       MOV       DPTR,#giLightScreenMode
+   \   000090   E0           MOVX      A,@DPTR
+   \   000091   7005         JNZ       ??zclSampleLight_EZModeCB_5
+   1608                {
+   1609                  HalLcdWriteString ( pStr, HAL_LCD_LINE_2 );
+   \   000093                ; Setup parameters for call to function HalLcdWriteString
+   \   000093   7902         MOV       R1,#0x2
+   \   000095   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+   1610                }
+   1611              }
+   1612          #endif
+   1613              // show main UI screen 3 seconds after binding
+   1614              osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_MAIN_SCREEN_EVT, 3000 );
+   \                     ??zclSampleLight_EZModeCB_5:
+   \   000098                ; Setup parameters for call to function osal_start_timerEx
+   \   000098   90....       MOV       DPTR,#__Constant_bb8
+   \   00009B   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   00009E   7A10         MOV       R2,#0x10
+   \   0000A0   12....       LCALL     ?Subroutine2 & 0xFFFF
+   1615            }
+   \                     ??CrossCallReturnLabel_2:
+   \   0000A3   12....       LCALL     ?DEALLOC_XSTACK8
+   1616          }
+   \                     ??zclSampleLight_EZModeCB_1:
+   \   0000A6   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for sampleLight_TestEp>`:
+   \   000000   08           DB 8
+   \   000001   ....         DW zclSampleLight_TaskID
+   \   000003   0000         DW 0H
+   \   000005   00           DB 0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleLight_NwkState>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for sSwHelp>`:
+   \   000000   5357353A     DB "SW5: Help       "
+   \            2048656C
+   \            70202020
+   \            20202020
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclSampleLight_CmdCallbacks>`:
+   \   000000   ....         DW `??zclSampleLight_BasicResetCB::?relay`
+   \   000002   ....         DW `??zclSampleLight_IdentifyCB::?relay`
+   \   000004   0000         DW 0H
+   \   000006   0000         DW 0H
+   \   000008   0000         DW 0H
+   \   00000A   ....         DW `??zclSampleLight_IdentifyQueryRspCB::?relay`
+   \   00000C   ....         DW `??zclSampleLight_OnOffCB::?relay`
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+   \   000018   0000         DW 0H
+   \   00001A   0000         DW 0H
+   \   00001C   0000         DW 0H
+   \   00001E   0000         DW 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode">`:
+   \   000000   455A4D6F     DB "EZMode"
+   \            646500  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode: Success">`:
+   \   000000   455A4D6F     DB "EZMode: Success"
+   \            64653A20
+   \            53756363
+   \            65737300
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode: NoMatch">`:
+   \   000000   455A4D6F     DB "EZMode: NoMatch"
+   \            64653A20
+   \            4E6F4D61
+   \            74636800
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode: Cancel">`:
+   \   000000   455A4D6F     DB "EZMode: Cancel"
+   \            64653A20
+   \            43616E63
+   \            656C00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode: BadParm">`:
+   \   000000   455A4D6F     DB "EZMode: BadParm"
+   \            64653A20
+   \            42616450
+   \            61726D00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EZMode: TimeOut">`:
+   \   000000   455A4D6F     DB "EZMode: TimeOut"
+   \            64653A20
+   \            54696D65
+   \            4F757400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ea60:
+   \   000000   60EA0000     DD 60000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e8:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_bb8:
+   \   000000   B80B0000     DD 3000
+   1617          #endif // ZCL_EZMODE
+   1618          
+   1619          /****************************************************************************
+   1620          ****************************************************************************/
+   1621          
+   1622          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2     21   zclSampleLight_BasicResetCB
+        2      5   -> NLME_LeaveReq
+        2      5   -> ZDApp_LeaveReset
+        2      5   -> osal_memset
+        2      5   -> zgWriteStartupOptions
+      0     13   zclSampleLight_EZModeCB
+        0      9   -> HalLcdWriteString
+        0     13   -> osal_start_timerEx
+        0      9   -> zclSampleLight_ProcessIdentifyTimeChange
+      2      0   zclSampleLight_IdentifyCB
+        2      0   -> zclSampleLight_ProcessIdentifyTimeChange
+      2      2   zclSampleLight_IdentifyQueryRspCB
+        2      2   -> zcl_EZModeAction
+      0      9   zclSampleLight_Init
+        0      9   -> HalLcdWriteString
+        0      9   -> RegisterForKeys
+        0      9   -> ZDO_RegisterForZDOMsg
+        0      9   -> afRegister
+        0      9   -> zclDiagnostic_InitStats
+        0      9   -> zclGeneral_RegisterCmdCallbacks
+        0      9   -> zclHA_Init
+        0      9   -> zclSampleLight_LcdDisplayUpdate
+        0      9   -> zcl_RegisterEZMode
+        0      9   -> zcl_registerAttrList
+        0      9   -> zcl_registerForMsg
+        0      9   -> zcl_registerReadWriteCB
+      2     20   zclSampleLight_LcdDisplayUpdate
+        2      0   -> HalLcdWriteString
+        2      0   -> HalLedSet
+        2      4   -> osal_start_timerEx
+        2      0   -> osal_stop_timerEx
+        2      0   -> zclHA_LcdStatusLine1
+      0     10   zclSampleLight_OnOffCB
+        0     10   -> zclSampleLight_LcdDisplayUpdate
+        0     10   -> zcl_getRawAFMsg
+      2     20   zclSampleLight_ProcessIdentifyTimeChange
+        2      0   -> HalLedSet
+        2      4   -> osal_start_timerEx
+        2      0   -> osal_stop_timerEx
+      0     16   zclSampleLight_event_loop
+        0     16   -> ZDO_ParseEPListRsp
+        0     16   -> osal_mem_free
+        0     16   -> osal_msg_deallocate
+        0     16   -> osal_msg_receive
+        0     16   -> osal_stop_timerEx
+        0     16   -> zclSampleLight_BasicResetCB
+        0     16   -> zclSampleLight_LcdDisplayUpdate
+        0     16   -> zclSampleLight_ProcessIdentifyTimeChange
+        0     16   -> zcl_EZModeAction
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ?<Constant "EZMode">
+      16  ?<Constant "EZMode: BadParm">
+      15  ?<Constant "EZMode: Cancel">
+      16  ?<Constant "EZMode: NoMatch">
+      16  ?<Constant "EZMode: Success">
+      16  ?<Constant "EZMode: TimeOut">
+      17  ?<Initializer for sSwHelp>
+       6  ?<Initializer for sampleLight_TestEp>
+      32  ?<Initializer for zclSampleLight_CmdCallbacks>
+       1  ?<Initializer for zclSampleLight_NwkState>
+      11  ??Subroutine7_0
+       6  ??Subroutine8_0
+       7  ??Subroutine9_0
+       5  ?Subroutine0
+       3  ?Subroutine1
+      13  ?Subroutine2
+      15  ?Subroutine3
+       3  ?Subroutine4
+      16  ?Subroutine5
+       2  ?Subroutine6
+       1  P0DIR
+       1  P0SEL
+       1  _A_P1
+       4  __Constant_3e8
+       4  __Constant_bb8
+       4  __Constant_ea60
+       1  gPermitDuration
+       1  giLightScreenMode
+       2  sClearLine
+      15  sDeviceName
+      14  sLightOff
+      14  sLightOn
+      13  sSwEZMode
+      17  sSwHelp
+      17  sSwLight
+       6  sampleLight_TestEp
+       1  zclSampleLightSeqNum
+      57  zclSampleLight_BasicResetCB
+      32  zclSampleLight_CmdCallbacks
+      12  zclSampleLight_DstAddr
+     169  zclSampleLight_EZModeCB
+      27  zclSampleLight_IdentifyCB
+      22  zclSampleLight_IdentifyQueryRspCB
+     134  zclSampleLight_Init
+     172  zclSampleLight_LcdDisplayUpdate
+       1  zclSampleLight_NwkState
+      80  zclSampleLight_OnOffCB
+      53  zclSampleLight_ProcessIdentifyTimeChange
+      10  zclSampleLight_RegisterEZModeData
+       1  zclSampleLight_TaskID
+     399  zclSampleLight_event_loop
+      54  -- Other
+
+ 
+ 1 194 bytes in segment BANKED_CODE
+    54 bytes in segment BANK_RELAYS
+     3 bytes in segment SFR_AN
+    56 bytes in segment XDATA_I
+    56 bytes in segment XDATA_ID
+   183 bytes in segment XDATA_ROM_C
+    16 bytes in segment XDATA_Z
+ 
+   110 bytes of CODE     memory
+   171 bytes of CONST    memory (+ 12 bytes shared)
+     0 bytes of DATA     memory (+  3 bytes shared)
+ 1 194 bytes of HUGECODE memory
+    72 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
